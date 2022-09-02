@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "pdf-bookmarker"
+version = "0.0.1"
+description = "automatically create bookmarks in a PDF file"
+authors = ["Huey <hello@huey.xyz>"]
+license = "GPL-v3"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pdfplumber = "^0.7.4"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

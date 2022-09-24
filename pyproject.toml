@@ -9,6 +9,7 @@ license = "GPL-v3"
 python = "^3.9"
 pdfplumber = "^0.7.4"
 PyPDF2 = "^2.10.9"
+typer = {extras = ["all"], version = "^0.6.1"}
 
 [tool.poetry.dev-dependencies]
 

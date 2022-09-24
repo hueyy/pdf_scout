@@ -1,11 +1,15 @@
+from collections import Counter
+from itertools import groupby
 from numbers import Number
+from operator import itemgetter
+from PyPDF2 import PdfMerger, PdfReader, PdfWriter
 from typing import List, TypedDict
+from typing import Optional
 import pdfplumber
 import re
-from itertools import groupby
-from operator import itemgetter
-from collections import Counter
-from PyPDF2 import PdfMerger
+import sys
+import typer
+from pprint import pprint
 
 
 # def group_chars_by_attr(attr: str, chars, sort=False):
@@ -19,15 +23,15 @@ from PyPDF2 import PdfMerger
 #     return group_chars_by_attr(attr="bottom", chars=chars, sort=True)
 
 
-def guess_left_margin(words):
+def guess_left_margin(words) -> Number:
     return Counter(map(lambda w: w["x0"], words)).most_common(1)[0][0]
 
 
 def score_font_name(font_name: str) -> Number:
     if re.match(r"-Bold$", font_name):
-        return 20
-    if re.match(r"-Oblique", font_name):
         return 10
+    if re.match(r"-Oblique", font_name):
+        return 5
     return 0
 
 
@@ -36,7 +40,7 @@ def score_font_size(font_size: Number) -> Number:
     return font_size
 
 
-def get_heading_score(word):
+def get_heading_score(word) -> Number:
     font_name: str = word["fontname"]
     font_size: Number = word["size"]
 
@@ -58,12 +62,12 @@ def write_bookmarks(
     for bookmark in bookmarks:
         merger.add_outline_item(
             bookmark["title"],
-            bookmark["page_number"],
+            bookmark["page_number"] - 1,
             None,
             None,
             False,
             False,
-            "/FitBH",
+            "/FitH",
             bookmark["scroll_distance"],
         )
     merger.write(output_path)
@@ -98,27 +102,44 @@ def add_bookmarks_to_pdf(input_path: str, output_path: str = "", headings=5):
 
         all_words = list(filter(lambda w: w["x0"] == left_margin, all_words))
 
+        # pprint(all_words)
+
         # all_fonts = set(map(lambda w: w["fontname"], all_words))
         # all_font_sizes = set(map(lambda w: w["size"], all_words))
 
         scored_words = [[get_heading_score(word), word] for word in all_words]
-        top_scores = sorted(list(set([tup[0] for tup in scored_words])), reverse=True)[
-            0:headings
-        ]
+        top_scores = sorted(
+            list(set([score for score, _ in scored_words])), reverse=True
+        )[0:headings]
+        top_scored_words = list(filter(lambda tup: tup[0] in top_scores, scored_words))
+
+        pprint(top_scored_words)
+
         bookmarks: List[Bookmark] = [
             dict(
                 title=word["text"],
                 page_number=word["page_number"],
-                scroll_distance=word["bottom"],
+                scroll_distance=(
+                    pdf_file.pages[word["page_number"] - 1].height
+                    - word["top"]
+                    + word["bottom"]
+                    - word["top"]
+                ),
             )
-            for score, word in list(
-                filter(lambda tup: tup[0] in top_scores, scored_words)
-            )
+            for _, word in top_scored_words
         ]
-        print(bookmarks)
+
+        pprint(bookmarks)
+
         write_bookmarks(input_path, output_path, bookmarks)
 
 
+def main(input_file_path: str, output_file_path: Optional[str] = typer.Argument("")):
+    if input_file_path is None or len(input_file_path) == 0:
+        print("Error: file_path not provided")
+        raise typer.Exit(code=1)
+    add_bookmarks_to_pdf(input_file_path, output_file_path)
+
+
 if __name__ == "__main__":
-    FILE_PATH = "./pdf/test.pdf"
-    add_bookmarks_to_pdf(FILE_PATH)
+    typer.run(main)

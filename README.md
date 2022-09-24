@@ -2,7 +2,7 @@
 
 ## Development
 
-This project manages its dependencies using [poetry](https://python-poetry.org). After installing poetry and entering the project folder, run the following to install the dependencies:
+This project manages its dependencies using [poetry](https://python-poetry.org) and is only supported for Python ^3.9. After installing poetry and entering the project folder, run the following to install the dependencies:
 
 ```bash
 poetry install

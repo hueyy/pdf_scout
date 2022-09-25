@@ -1,26 +1,12 @@
 from collections import Counter
-from itertools import groupby
 from numbers import Number
-from operator import itemgetter
-from PyPDF2 import PdfMerger, PdfReader, PdfWriter
-from typing import List, TypedDict
+from PyPDF2 import PdfMerger
+from typing import List, Tuple, TypedDict
 from typing import Optional
 import pdfplumber
 import re
-import sys
 import typer
 from pprint import pprint
-
-
-# def group_chars_by_attr(attr: str, chars, sort=False):
-#     get_attr = itemgetter(attr)
-#     if sort:
-#         chars.sort(key=get_attr)
-#     return [[key, [char for char in val]] for key, val in groupby(chars, key=get_attr)]
-
-
-# def group_chars_by_line(chars):
-#     return group_chars_by_attr(attr="bottom", chars=chars, sort=True)
 
 
 def guess_left_margin(words) -> Number:
@@ -54,22 +40,61 @@ class Bookmark(TypedDict):
     scroll_distance: Number
 
 
+def find_last_list(input_list):
+    if len(input_list) == 0:
+        return input_list
+    if isinstance(input_list[-1], list):
+        return find_last_list(input_list[-1])
+    else:
+        return input_list
+
+
 def write_bookmarks(
     input_path: str, output_path: str, bookmarks: List[Bookmark]
 ) -> None:
     merger = PdfMerger()
-    merger.append(input_path)
-    for bookmark in bookmarks:
-        merger.add_outline_item(
-            bookmark["title"],
-            bookmark["page_number"] - 1,
-            None,
-            None,
-            False,
-            False,
-            "/FitH",
-            bookmark["scroll_distance"],
-        )
+    merger.append(input_path, import_outline=False)  # disregard existing outline
+
+    parent_bookmarks: List[Tuple(int, any)] = []
+    # last item in list is last outline item added
+
+    add_bookmark_to_writer = lambda writer, bookmark, parent: writer.add_outline_item(
+        bookmark["title"],
+        bookmark["page_number"] - 1,
+        parent,
+        None,
+        False,
+        False,
+        "/FitH",
+        bookmark["scroll_distance"],
+    )
+    get_last_bookmark = (
+        lambda parent_bs: parent_bs[-1][1] if len(parent_bs) >= 1 else None
+    )
+
+    for rank, bookmark in bookmarks:
+        add_bookmark = lambda p: add_bookmark_to_writer(merger, bookmark, p)
+
+        if len(parent_bookmarks) == 0:
+            new_bookmark = add_bookmark(None)
+            parent_bookmarks.append((rank, new_bookmark))
+        else:
+            last = parent_bookmarks[-1]
+            last_rank, last_bookmark = last
+            if last_rank < rank:
+                new_bookmark = add_bookmark(last_bookmark)
+                parent_bookmarks.append((rank, new_bookmark))
+            elif last_rank == rank:
+                parent_bookmarks.pop()
+                parent_bookmark = get_last_bookmark(parent_bookmarks)
+                new_bookmark = add_bookmark(parent_bookmark)
+                parent_bookmarks.append((rank, new_bookmark))
+            elif last_rank > rank:
+                parent_bookmarks.pop()
+                parent_bookmarks.pop()
+                parent_bookmark = get_last_bookmark(parent_bookmarks)
+                new_bookmark = add_bookmark(parent_bookmark)
+
     merger.write(output_path)
     merger.close()
     return None
@@ -91,7 +116,28 @@ def extract_all_words(pdf_file):
     ]
 
 
-def add_bookmarks_to_pdf(input_path: str, output_path: str = "", headings=5):
+def generate_bookmarks(top_scored_words, pages):
+    last_rank = 0
+    result = []
+    current_level = 0
+    for rank, word in top_scored_words:
+        bookmark = []
+        if rank > last_rank:
+            current_level += 1
+            find_last_list(result).append(bookmark)
+        elif rank < last_rank:
+            current_level -= 1
+            entrypoint = result
+            for i in range(current_level):
+                entrypoint = entrypoint[-1]
+            entrypoint.extend(bookmark)
+        else:
+            find_last_list(result).extend(bookmark)
+        last_rank = rank
+    return result
+
+
+def add_bookmarks_to_pdf(input_path: str, output_path: str = "", levels=5):
     if len(output_path) == 0:
         input_path_start, _ = input_path.split(".pdf")
         output_path = f"{input_path_start}-out.pdf"
@@ -110,23 +156,30 @@ def add_bookmarks_to_pdf(input_path: str, output_path: str = "", headings=5):
         scored_words = [[get_heading_score(word), word] for word in all_words]
         top_scores = sorted(
             list(set([score for score, _ in scored_words])), reverse=True
-        )[0:headings]
-        top_scored_words = list(filter(lambda tup: tup[0] in top_scores, scored_words))
+        )[0:levels]
+        top_scored_words = [
+            [top_scores.index(score), word]
+            for score, word in scored_words
+            if score in top_scores
+        ]
 
         pprint(top_scored_words)
 
-        bookmarks: List[Bookmark] = [
-            dict(
-                title=word["text"],
-                page_number=word["page_number"],
-                scroll_distance=(
-                    pdf_file.pages[word["page_number"] - 1].height
-                    - word["top"]
-                    + word["bottom"]
-                    - word["top"]
+        bookmarks: List[Tuple[int, Bookmark]] = [
+            (
+                rank,
+                dict(
+                    title=word["text"],
+                    page_number=word["page_number"],
+                    scroll_distance=(
+                        pdf_file.pages[word["page_number"] - 1].height
+                        - word["top"]
+                        + word["bottom"]
+                        - word["top"]
+                    ),
                 ),
             )
-            for _, word in top_scored_words
+            for rank, word in top_scored_words
         ]
 
         pprint(bookmarks)

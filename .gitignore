@@ -2,3 +2,4 @@
 /pdf
 /.vscode
 *.txt
+__pycache__

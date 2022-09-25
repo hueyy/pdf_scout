@@ -1,52 +1,36 @@
-from collections import Counter
 from numbers import Number
 from PyPDF2 import PdfMerger
+from rich import print as rprint
+from scoring import get_heading_score, HeadingScore
 from typing import List, Tuple, TypedDict
 from typing import Optional
 import pdfplumber
-import re
+import statistics
 import typer
-from pprint import pprint
+from itertools import groupby
+from operator import itemgetter
 
 
 def guess_left_margin(words) -> Number:
-    return Counter(map(lambda w: w["x0"], words)).most_common(1)[0][0]
+    # TODO: set max thresholds to handle for documents with a lot of indented text
+    return statistics.mode([word["x0"] for word in words])
 
 
-def score_font_name(font_name: str) -> Number:
-    if re.match(r"-Bold$", font_name):
-        return 10
-    if re.match(r"-Oblique", font_name):
-        return 5
-    return 0
+def guess_body_score(word_list: Tuple[HeadingScore, any]) -> Number:
+    return statistics.mode([score["font"] for score, _ in word_list])
 
 
-def score_font_size(font_size: Number) -> Number:
-    # TODO: make more sophisticated; steps should be exponential
-    return font_size
-
-
-def get_heading_score(word) -> Number:
-    font_name: str = word["fontname"]
-    font_size: Number = word["size"]
-
-    score = score_font_name(font_name) + score_font_size(font_size)
-    return score
+def guess_body_spacing(words) -> Tuple[Number, Number]:
+    return (
+        statistics.mode([word["top_spacing"] for word in words]),
+        statistics.mode([word["bottom_spacing"] for word in words]),
+    )
 
 
 class Bookmark(TypedDict):
     title: str
     page_number: str
     scroll_distance: Number
-
-
-def find_last_list(input_list):
-    if len(input_list) == 0:
-        return input_list
-    if isinstance(input_list[-1], list):
-        return find_last_list(input_list[-1])
-    else:
-        return input_list
 
 
 def write_bookmarks(
@@ -74,6 +58,7 @@ def write_bookmarks(
 
     for rank, bookmark in bookmarks:
         add_bookmark = lambda p: add_bookmark_to_writer(merger, bookmark, p)
+        rprint(rank, bookmark["title"])
 
         if len(parent_bookmarks) == 0:
             new_bookmark = add_bookmark(None)
@@ -91,7 +76,8 @@ def write_bookmarks(
                 parent_bookmarks.append((rank, new_bookmark))
             elif last_rank > rank:
                 parent_bookmarks.pop()
-                parent_bookmarks.pop()
+                if len(parent_bookmarks) >= 1:
+                    parent_bookmarks.pop()
                 parent_bookmark = get_last_bookmark(parent_bookmarks)
                 new_bookmark = add_bookmark(parent_bookmark)
 
@@ -100,14 +86,41 @@ def write_bookmarks(
     return None
 
 
-def extract_all_words(pdf_file):
-    return [
+def get_word_line_position(word) -> Number:
+    return word["top"]
+
+
+def add_line_spacing(line_positions: List[Tuple[int, List[Number]]], word, pdf_file):
+    page_line_positions = [
+        page_lines
+        for page_number, page_lines in line_positions
+        if page_number == word["page_number"]
+    ][0]
+    index = page_line_positions.index(get_word_line_position(word))
+    cur_line_position = page_line_positions[index]
+    prev_line_position = page_line_positions[index - 1] if index != 0 else 0
+    next_line_position = (
+        page_line_positions[index + 1]
+        if index < len(page_line_positions) - 1
+        else pdf_file.pages[word["page_number"] - 1].height
+    )
+    return dict(
+        **word,
+        top_spacing=round(cur_line_position - prev_line_position, 2),
+        bottom_spacing=round(next_line_position - cur_line_position, 2),
+    )
+
+
+def extract_all_words(pdf_file) -> List[dict[str, any]]:
+    all_words = [
         word
         for page_list in (
             [
                 dict(**word, page_number=page.page_number)
                 for word in page.extract_words(
-                    keep_blank_chars=True, extra_attrs=["fontname", "size"]
+                    keep_blank_chars=True,
+                    use_text_flow=True,
+                    extra_attrs=["fontname", "size"],
                 )
             ]
             for page in pdf_file.pages
@@ -115,55 +128,65 @@ def extract_all_words(pdf_file):
         for word in page_list
     ]
 
+    # add distance from previous & next line
+    # assumes all lines are perfectly horizontal and of full width
+    line_positions: List[Tuple[int, List[Number]]] = [
+        (
+            page_number,
+            sorted(list(set([get_word_line_position(word) for word in words]))),
+        )
+        for page_number, words in groupby(all_words, key=itemgetter("page_number"))
+    ]
+    all_words = [add_line_spacing(line_positions, word, pdf_file) for word in all_words]
+    # ignore all words with normal paragraph spacing
+    body_top_spacing, body_bottom_spacing = guess_body_spacing(all_words)
+    all_words = [
+        word
+        for word in all_words
+        if (
+            word["top_spacing"] != body_top_spacing
+            and word["bottom_spacing"] != body_bottom_spacing
+        )
+    ]
 
-def generate_bookmarks(top_scored_words, pages):
-    last_rank = 0
-    result = []
-    current_level = 0
-    for rank, word in top_scored_words:
-        bookmark = []
-        if rank > last_rank:
-            current_level += 1
-            find_last_list(result).append(bookmark)
-        elif rank < last_rank:
-            current_level -= 1
-            entrypoint = result
-            for i in range(current_level):
-                entrypoint = entrypoint[-1]
-            entrypoint.extend(bookmark)
-        else:
-            find_last_list(result).extend(bookmark)
-        last_rank = rank
-    return result
+    # ignore all words not at left margin
+    left_margin = guess_left_margin(all_words)
+    # TODO: add some margin of appreciation to account for indented headers, footnotes, etc
+    # TODO: handle center-aligned text
+    all_words = [word for word in all_words if word["x0"] == left_margin]
+
+    return all_words
 
 
-def add_bookmarks_to_pdf(input_path: str, output_path: str = "", levels=5):
+def score_words(all_words: List[any]):
+    scored_words: List[Tuple[HeadingScore, any]] = [
+        (get_heading_score(word), word) for word in all_words
+    ]
+    body_score = guess_body_score(scored_words)
+    # ignore all body text
+    scored_words = [
+        (score, word) for score, word in scored_words if score["font"] != body_score
+    ]
+    return scored_words
+
+
+def add_bookmarks_to_pdf(input_path: str, output_path: str = "", levels=3):
     if len(output_path) == 0:
         input_path_start, _ = input_path.split(".pdf")
         output_path = f"{input_path_start}-out.pdf"
     with pdfplumber.open(input_path) as pdf_file:
         all_words = extract_all_words(pdf_file)
-        left_margin = guess_left_margin(all_words)
-        # TODO: add some margin of appreciation to account for indented headers, footnotes, etc
+        scored_words = score_words(all_words)
 
-        all_words = list(filter(lambda w: w["x0"] == left_margin, all_words))
-
-        # pprint(all_words)
-
-        # all_fonts = set(map(lambda w: w["fontname"], all_words))
-        # all_font_sizes = set(map(lambda w: w["size"], all_words))
-
-        scored_words = [[get_heading_score(word), word] for word in all_words]
-        top_scores = sorted(
-            list(set([score for score, _ in scored_words])), reverse=True
+        top_scores: List[Number] = sorted(
+            list(set([score["overall"] for score, _ in scored_words])), reverse=True
         )[0:levels]
         top_scored_words = [
-            [top_scores.index(score), word]
+            [top_scores.index(score["overall"]), word]
             for score, word in scored_words
-            if score in top_scores
+            if score["overall"] in top_scores
         ]
-
-        pprint(top_scored_words)
+        rprint(top_scored_words)
 
         bookmarks: List[Tuple[int, Bookmark]] = [
             (
@@ -181,8 +204,6 @@ def add_bookmarks_to_pdf(input_path: str, output_path: str = "", levels=5):
             )
             for rank, word in top_scored_words
         ]
-
-        pprint(bookmarks)
 
         write_bookmarks(input_path, output_path, bookmarks)
 

@@ -70,6 +70,14 @@ ssh = ["bcrypt (>=3.1.5)"]
 test = ["pytest (>=6.2.0)", "pytest-benchmark", "pytest-cov", "pytest-subtests", "pytest-xdist", "pretend", "iso8601", "pytz", "hypothesis (>=1.11.4,!=3.79.2)"]
 
 [[package]]
+name = "joblib"
+version = "1.2.0"
+description = "Lightweight pipelining with Python functions"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "pdfminer.six"
 version = "20220524"
 description = "PDF parser and analyzer"
@@ -210,7 +218,7 @@ test = ["pytest (>=5.3.5)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "6532f789651707611612d4da51c4796fdfec0c6816a5f0056575640dbb5722be"
+content-hash = "2d40ccb3099d4f57b5c55733ca38941aaa645d9b4c32d27dcf6e7055d31f4828"
 
 [metadata.files]
 cffi = []
@@ -219,6 +227,7 @@ click = []
 colorama = []
 commonmark = []
 cryptography = []
+joblib = []
 "pdfminer.six" = []
 pdfplumber = []
 pillow = []

@@ -1,15 +1,18 @@
 from numbers import Number
-import re
-from typing import TypedDict
 from rich import print as rprint
+from typing import List, Tuple, TypedDict
+import re
+import statistics
 
 
 def score_font_name(font_name: str) -> Number:
     if re.search(r"Bold$", font_name):
         return 20
+    elif re.search(r"Semibold", font_name):
+        return 15
     elif re.search(r"BoldItalic$", font_name):
         return 10
-    if re.search(r"(Italic|Oblique)$", font_name):
+    if re.search(r"(It|Italic|Oblique)$", font_name):
         return 5
     return 0
 
@@ -56,3 +59,22 @@ def get_heading_score(word) -> HeadingScore:
         "font": round(font_name_score + font_size_score, 2),
         "overall": score,
     }
+
+
+def guess_body_score(word_list: Tuple[HeadingScore, any]) -> Number:
+    return statistics.mode([score["font"] for score, _ in word_list])
+
+
+def score_words(all_words: List[any]):
+    scored_words: List[Tuple[HeadingScore, any]] = [
+        (get_heading_score(word), word) for word in all_words
+    ]
+    body_score = guess_body_score(scored_words)
+    # ignore all body text
+    scored_words = [
+        (score, word) for score, word in scored_words if score["font"] != body_score
+    ]
+
+    rprint(locals())
+
+    return scored_words

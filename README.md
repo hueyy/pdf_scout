@@ -10,6 +10,12 @@ poetry run python ./src/app.py
 
 ![screenshot](./assets/screenshot.png)
 
+This project is a work in progress and will likely only generate accurate bookmarks for documents that conform to the following requirements:
+
+* Single column of text (not multiple columns)
+* Font size of header text >= font size of body text
+* Header text is justified or left-aligned
+
 ## Development
 
 This project manages its dependencies using [poetry](https://python-poetry.org) and is only supported for Python ^3.9. After installing poetry and entering the project folder, run the following to install the dependencies:

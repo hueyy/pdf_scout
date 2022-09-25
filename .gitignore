@@ -3,3 +3,4 @@
 /.vscode
 *.txt
 __pycache__
+/.cache

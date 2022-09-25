@@ -1,4 +1,6 @@
+from itertools import groupby
 from numbers import Number
+from operator import itemgetter
 from PyPDF2 import PdfMerger
 from rich import print as rprint
 from scoring import get_heading_score, HeadingScore
@@ -7,12 +9,11 @@ from typing import Optional
 import pdfplumber
 import statistics
 import typer
-from itertools import groupby
-from operator import itemgetter
 
 
 def guess_left_margin(words) -> Number:
     # TODO: set max thresholds to handle for documents with a lot of indented text
+    # TODO: handle documents with differing left margins on odd & even pages
     return statistics.mode([word["x0"] for word in words])
 
 

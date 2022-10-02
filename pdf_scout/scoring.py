@@ -8,7 +8,7 @@ import statistics
 def score_font_name(font_name: str) -> Number:
     if re.search(r"(Bold|BoldMT)$", font_name):
         return 20
-    elif re.search(r"Semibold", font_name):
+    elif re.search(r"Semibold$", font_name):
         return 15
     elif re.search(r"(BoldItalic|BoldItalicMT)$", font_name):
         return 10
@@ -65,16 +65,20 @@ def guess_body_score(word_list: Tuple[HeadingScore, any]) -> Number:
     return statistics.mode([score["font"] for score, _ in word_list])
 
 
-def score_words(all_words: List[any]):
-    scored_words: List[Tuple[HeadingScore, any]] = [
+def score_words(all_words: List[any], non_body_words: List[any]):
+    scored_all_words: List[Tuple[HeadingScore, any]] = [
         (get_heading_score(word), word) for word in all_words
     ]
-    body_score = guess_body_score(scored_words)
+    body_score = guess_body_score(scored_all_words)
+
+    scored_non_body_words = [(get_heading_score(word), word) for word in non_body_words]
     # ignore all body text
-    scored_words = [
-        (score, word) for score, word in scored_words if score["font"] != body_score
+    scored_non_body_words = [
+        (score, word)
+        for score, word in scored_non_body_words
+        if score["font"] > body_score
     ]
 
-    debug_log("score_words locals:", body_score, scored_words)
+    debug_log("score_words locals:", body_score, scored_non_body_words)
 
-    return scored_words
+    return scored_non_body_words

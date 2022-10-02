@@ -9,10 +9,12 @@ import statistics
 def guess_left_margin(words) -> List[Number]:
     words_x0 = [round(word["x0"]) for word in words]
     counts = [(x0, words_x0.count(x0)) for x0 in set(words_x0)]
+    std_dev = statistics.pstdev([count for _, count in counts])
+    mean = statistics.mean([count for _, count in counts])
     threshold_counts = [
         (left_margin, count)
         for left_margin, count in counts
-        if count >= 0.1 * len(words_x0)
+        if count >= mean + std_dev * 5
     ]
 
     debug_log("guess_left_margin locals:", locals())
@@ -49,10 +51,6 @@ def guess_body_spacing(words) -> Tuple[Number, Number]:
         statistics.mode([word["top_spacing"] for word in words]),
         statistics.mode([word["bottom_spacing"] for word in words]),
     )
-
-
-def guess_body_font_size(words) -> Number:
-    return statistics.mode([word["size"] for word in words])
 
 
 def get_word_line_position(word) -> Number:
@@ -103,7 +101,6 @@ def raw_extract_words(pdf_file) -> List[dict[str, any]]:
 
 def extract_all_words(pdf_file) -> List[dict[str, any]]:
     all_words = raw_extract_words(pdf_file)
-    body_font_size = guess_body_font_size(all_words)
     all_words = add_line_spacing_to_words(pdf_file, all_words)
 
     body_top_spacing, body_bottom_spacing = guess_body_spacing(all_words)
@@ -112,7 +109,7 @@ def extract_all_words(pdf_file) -> List[dict[str, any]]:
     # TODO: handle center-aligned text
     left_margins = guess_left_margin(all_words)
 
-    all_words = [
+    non_body_words = [
         word
         for word in all_words
         if (
@@ -122,9 +119,6 @@ def extract_all_words(pdf_file) -> List[dict[str, any]]:
                 word["top_spacing"] >= body_top_spacing * 1.05
                 and word["bottom_spacing"] >= body_bottom_spacing * 1.05
             )
-            and (  # ignore all text smaller than body font size
-                word["size"] >= body_font_size
-            )
             and (  # ignore all words not at left margin
                 round(word["x0"]) in left_margins
             )
@@ -133,4 +127,4 @@ def extract_all_words(pdf_file) -> List[dict[str, any]]:
 
     debug_log("extract_all_words locals: ", locals())
 
-    return all_words
+    return all_words, non_body_words

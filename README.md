@@ -17,11 +17,22 @@ pip uninstall pdf_scout
 
 ![screenshot](./assets/screenshot.png)
 
-This project is a work in progress and will likely only generate accurate bookmarks for documents that conform to the following requirements:
+This project is a work in progress and will likely only generate suitable bookmarks for documents that conform to the following requirements:
 
 * Single column of text (not multiple columns)
-* Font size of header text >= font size of body text
+* Font size of header text > font size of body text
 * Header text is justified or left-aligned
+* Paragraph spacing for headers > body text paragraph spacing
+* Consistent left margins on every page
+
+## Supported document types
+
+`pdf_scout` has been tested on and expressly supports the following classes of documents:
+
+- Singapore State Court and Supreme Court Judgments (unreported)
+- Singapore Law Reports
+
+It may support other types of documents as well. If a particular class of document isn't supported or does not work well, please open an issue and I will consider adding support for it.
 
 ## Development
 

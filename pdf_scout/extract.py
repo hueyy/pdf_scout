@@ -4,7 +4,6 @@ from operator import itemgetter
 from rich import print as rprint
 from typing import List, Tuple
 import statistics
-from math import isclose
 
 
 def guess_left_margin(words) -> List[Number]:
@@ -132,6 +131,6 @@ def extract_all_words(pdf_file) -> List[dict[str, any]]:
         )
     ]
 
-    rprint(locals())
+    # rprint(locals())
 
     return all_words

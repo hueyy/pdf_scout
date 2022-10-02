@@ -1,9 +1,15 @@
 [tool.poetry]
-name = "pdf-bookmarker"
-version = "0.0.1"
+name = "pdf_scout"
+version = "0.0.2"
 description = "automatically create bookmarks in a PDF file"
 authors = ["Huey <hello@huey.xyz>"]
 license = "GPL-v3"
+readme = "README.md"
+homepage = "https://github.com/hueyy/pdf_scout"
+repository = "https://github.com/hueyy/pdf_scout"
+documentation = "https://github.com/hueyy/pdf_scout"
+keywords = ["pdf", "bookmark", "outline"]
+exclude = ["pdf_scout/tests"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -12,10 +18,13 @@ PyPDF2 = "^2.10.9"
 typer = {extras = ["all"], version = "^0.6.1"}
 joblib = "^1.2.0"
 rich = "^12.5.1"
+
+[tool.poetry.dev-dependencies]
 snapshottest = "^0.6.0"
 pytest = "^7.1.3"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.scripts]
+pdf_scout = "pdf_scout.app:start"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

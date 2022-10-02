@@ -4,3 +4,6 @@
 *.txt
 __pycache__
 /.cache
+/.pytest_cache
+/.venv
+/dist

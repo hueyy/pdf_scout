@@ -1,8 +1,8 @@
-from extract import extract_all_words
 from numbers import Number
+from pdf_scout.extract import extract_all_words
+from pdf_scout.scoring import score_words
 from PyPDF2 import PdfMerger
 from rich import print as rprint
-from scoring import score_words
 from time import time
 from typing import List, Tuple, TypedDict
 from typing import Optional
@@ -41,7 +41,7 @@ def write_bookmarks(
 
     for rank, bookmark in bookmarks:
         add_bookmark = lambda p: add_bookmark_to_writer(merger, bookmark, p)
-        rprint(rank, bookmark["title"])
+        # rprint(rank, bookmark["title"])
 
         if len(parent_bookmarks) == 0:
             new_bookmark = add_bookmark(None)
@@ -130,5 +130,9 @@ def main(input_file_path: str, output_file_path: Optional[str] = typer.Argument(
     rprint(f"Finished in {end_time - start_time}s")
 
 
-if __name__ == "__main__":
+def start():
     typer.run(main)
+
+
+if __name__ == "__main__":
+    start()

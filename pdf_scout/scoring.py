@@ -75,6 +75,6 @@ def score_words(all_words: List[any]):
         (score, word) for score, word in scored_words if score["font"] != body_score
     ]
 
-    rprint(locals())
+    # rprint(locals())
 
     return scored_words

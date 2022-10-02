@@ -2,7 +2,7 @@
 name = "attrs"
 version = "22.1.0"
 description = "Classes Without Boilerplate"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.5"
 
@@ -87,7 +87,7 @@ test = ["pytest (>=6.2.0)", "pytest-benchmark", "pytest-cov", "pytest-subtests",
 name = "fastdiff"
 version = "0.3.0"
 description = "A fast native implementation of diff algorithm with a pure python fallback"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -99,7 +99,7 @@ wasmer-compiler-cranelift = ">=1.0.0"
 name = "iniconfig"
 version = "1.1.1"
 description = "iniconfig: brain-dead simple config-ini parsing"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -115,7 +115,7 @@ python-versions = ">=3.7"
 name = "packaging"
 version = "21.3"
 description = "Core utilities for Python packages"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -141,7 +141,7 @@ image = ["pillow"]
 
 [[package]]
 name = "pdfplumber"
-version = "0.7.4"
+version = "0.7.5"
 description = "Plumb a PDF for detailed information about each char, rectangle, and line."
 category = "main"
 optional = false
@@ -150,7 +150,7 @@ python-versions = ">=3.7"
 [package.dependencies]
 "pdfminer.six" = "20220524"
 Pillow = ">=9.1"
-Wand = ">=0.6.7"
+Wand = ">=0.6.10"
 
 [[package]]
 name = "pillow"
@@ -168,7 +168,7 @@ tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "pa
 name = "pluggy"
 version = "1.0.0"
 description = "plugin and hook calling mechanisms for python"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -180,7 +180,7 @@ dev = ["tox", "pre-commit"]
 name = "py"
 version = "1.11.0"
 description = "library with cross-python path, ini-parsing, io, code, log facilities"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
@@ -207,7 +207,7 @@ plugins = ["importlib-metadata"]
 name = "pyparsing"
 version = "3.0.9"
 description = "pyparsing module - Classes and methods to define and execute parsing grammars"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6.8"
 
@@ -216,7 +216,7 @@ diagrams = ["railroad-diagrams", "jinja2"]
 
 [[package]]
 name = "pypdf2"
-version = "2.10.9"
+version = "2.11.0"
 description = "A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files"
 category = "main"
 optional = false
@@ -232,7 +232,7 @@ crypto = ["pycryptodome"]
 name = "pytest"
 version = "7.1.3"
 description = "pytest: simple powerful testing with Python"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -275,7 +275,7 @@ python-versions = ">=3.4"
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 
@@ -283,7 +283,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 name = "snapshottest"
 version = "0.6.0"
 description = "Snapshot testing for pytest, unittest, Django, and Nose"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -301,7 +301,7 @@ nose = ["nose"]
 name = "termcolor"
 version = "2.0.1"
 description = "ANSI color formatting for output in terminal"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -312,7 +312,7 @@ tests = ["pytest-cov", "pytest"]
 name = "tomli"
 version = "2.0.1"
 description = "A lil' TOML parser"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -360,7 +360,7 @@ test = ["pytest (>=5.3.5)"]
 name = "wasmer"
 version = "1.1.0"
 description = "Python extension to run WebAssembly binaries"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -368,14 +368,14 @@ python-versions = "*"
 name = "wasmer-compiler-cranelift"
 version = "1.1.0"
 description = "The Cranelift compiler for the `wasmer` package (to compile WebAssembly module)"
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "66c747fd2e06406acab5b3426c8e147bee38962a36a8c8d26bd3b2911da4925e"
+content-hash = "8cd048da741ed358a8dd055a7812942f9afe22b86846c384a21d4eb809df246c"
 
 [metadata.files]
 attrs = []

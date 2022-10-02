@@ -1,9 +1,9 @@
-# pdf-bookmarker
+# pdf_scout
 
 This CLI tool automatically generates PDF bookmarks (also known as an 'outline' or a 'table of contents') for computer-generated PDF documents.
 
 ```bash
-cd pdf-bookmarker
+cd pdf_scout
 poetry install
 poetry run python ./src/app.py
 ```

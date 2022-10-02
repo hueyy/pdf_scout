@@ -1,5 +1,10 @@
 # pdf_scout
 
+
+![PyPI](https://img.shields.io/pypi/v/pdf_scout)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pdf_scout)
+![PyPI - License](https://img.shields.io/pypi/l/pdf_scout)
+
 This CLI tool automatically generates PDF bookmarks (also known as an 'outline' or a 'table of contents') for computer-generated PDF documents.
 
 You can install it globally via pip:

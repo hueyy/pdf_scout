@@ -35,3 +35,12 @@ To run a script directly, run:
 ```bash
 poetry run python ./src/app.py
 ```
+
+### Tests
+
+There are snapshot tests. Input PDFs are not provided at the moment, so you will have populate the `/pdf` folder manually:
+
+```bash
+poetry run pytest
+poetry run pytest --snapshot-update
+```

@@ -25,9 +25,24 @@ def guess_left_margin(words) -> List[Number]:
         # assume uniform left margin
         return (
             [threshold_counts[0][0]]
-            if len(threshold_counts == 1)
+            if len(threshold_counts) == 1
             else [max(counts, key=lambda x: x[1])[0]]
         )
+
+
+def add_line_spacing_to_words(pdf_file, all_words):
+    # add distance from previous & next line
+    # assumes all lines are perfectly horizontal and of full width
+    line_positions: List[Tuple[int, List[Number]]] = [
+        (
+            page_number,
+            sorted(list(set([get_word_line_position(word) for word in words]))),
+        )
+        for page_number, words in groupby(all_words, key=itemgetter("page_number"))
+    ]
+    return [
+        add_line_spacing_to_word(line_positions, word, pdf_file) for word in all_words
+    ]
 
 
 def guess_body_spacing(words) -> Tuple[Number, Number]:
@@ -45,7 +60,9 @@ def get_word_line_position(word) -> Number:
     return word["top"]
 
 
-def add_line_spacing(line_positions: List[Tuple[int, List[Number]]], word, pdf_file):
+def add_line_spacing_to_word(
+    line_positions: List[Tuple[int, List[Number]]], word, pdf_file
+):
     page_line_positions = [
         page_lines
         for page_number, page_lines in line_positions
@@ -66,7 +83,7 @@ def add_line_spacing(line_positions: List[Tuple[int, List[Number]]], word, pdf_f
     )
 
 
-def extract_all_words(pdf_file) -> List[dict[str, any]]:
+def raw_extract_words(pdf_file) -> List[dict[str, any]]:
     all_words = [
         word
         for page_list in (
@@ -82,19 +99,13 @@ def extract_all_words(pdf_file) -> List[dict[str, any]]:
         )
         for word in page_list
     ]
+    return all_words
 
+
+def extract_all_words(pdf_file) -> List[dict[str, any]]:
+    all_words = raw_extract_words(pdf_file)
     body_font_size = guess_body_font_size(all_words)
-
-    # add distance from previous & next line
-    # assumes all lines are perfectly horizontal and of full width
-    line_positions: List[Tuple[int, List[Number]]] = [
-        (
-            page_number,
-            sorted(list(set([get_word_line_position(word) for word in words]))),
-        )
-        for page_number, words in groupby(all_words, key=itemgetter("page_number"))
-    ]
-    all_words = [add_line_spacing(line_positions, word, pdf_file) for word in all_words]
+    all_words = add_line_spacing_to_words(pdf_file, all_words)
 
     body_top_spacing, body_bottom_spacing = guess_body_spacing(all_words)
 

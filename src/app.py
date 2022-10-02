@@ -69,43 +69,55 @@ def write_bookmarks(
     return None
 
 
+def open_pdf_file(input_path: str) -> pdfplumber.PDF:
+    return pdfplumber.open(input_path)
+
+
+def get_words_from_pdf_file(pdf_file: pdfplumber.PDF):
+    all_words = extract_all_words(pdf_file)
+    return all_words
+
+
 def add_bookmarks_to_pdf(input_path: str, output_path: str = "", levels=3):
     if len(output_path) == 0:
         input_path_start, _ = input_path.split(".pdf")
         output_path = f"{input_path_start}-out.pdf"
-    with pdfplumber.open(input_path) as pdf_file:
-        all_words = extract_all_words(pdf_file)
-        scored_words = score_words(all_words)
 
-        top_scores: List[Number] = sorted(
-            list(set([score["overall"] for score, _ in scored_words])), reverse=True
-        )[0:levels]
-        top_scored_words = [
-            [top_scores.index(score["overall"]), word]
-            for score, word in scored_words
-            if score["overall"] in top_scores
-        ]
+    pdf_file = open_pdf_file(input_path)
+    all_words = get_words_from_pdf_file(pdf_file)
+    scored_words = score_words(all_words)
 
-        bookmarks: List[Tuple[int, Bookmark]] = [
-            (
-                rank,
-                dict(
-                    title=word["text"],
-                    page_number=word["page_number"],
-                    scroll_distance=(
-                        pdf_file.pages[word["page_number"] - 1].height
-                        - word["top"]
-                        + word["bottom"]
-                        - word["top"]
-                    ),
+    top_scores: List[Number] = sorted(
+        list(set([score["overall"] for score, _ in scored_words])), reverse=True
+    )[0:levels]
+    top_scored_words = [
+        [top_scores.index(score["overall"]), word]
+        for score, word in scored_words
+        if score["overall"] in top_scores
+    ]
+
+    bookmarks: List[Tuple[int, Bookmark]] = [
+        (
+            rank,
+            dict(
+                title=word["text"],
+                page_number=word["page_number"],
+                scroll_distance=(
+                    pdf_file.pages[word["page_number"] - 1].height
+                    - word["top"]
+                    + word["bottom"]
+                    - word["top"]
                 ),
-            )
-            for rank, word in top_scored_words
-        ]
+            ),
+        )
+        for rank, word in top_scored_words
+    ]
 
-        # rprint(locals())
+    # rprint(locals())
 
-        write_bookmarks(input_path, output_path, bookmarks)
+    write_bookmarks(input_path, output_path, bookmarks)
+
+    pdf_file.close()
 
 
 def main(input_file_path: str, output_file_path: Optional[str] = typer.Argument("")):

@@ -1,18 +1,18 @@
 from numbers import Number
-from rich import print as rprint
+from pdf_scout.logger import debug_log
 from typing import List, Tuple, TypedDict
 import re
 import statistics
 
 
 def score_font_name(font_name: str) -> Number:
-    if re.search(r"Bold$", font_name):
+    if re.search(r"(Bold|BoldMT)$", font_name):
         return 20
     elif re.search(r"Semibold", font_name):
         return 15
-    elif re.search(r"BoldItalic$", font_name):
+    elif re.search(r"(BoldItalic|BoldItalicMT)$", font_name):
         return 10
-    if re.search(r"(It|Italic|Oblique)$", font_name):
+    if re.search(r"(It|Italic|ItalicMT|Oblique)$", font_name):
         return 5
     return 0
 
@@ -75,6 +75,6 @@ def score_words(all_words: List[any]):
         (score, word) for score, word in scored_words if score["font"] != body_score
     ]
 
-    # rprint(locals())
+    debug_log("score_words locals:", body_score, scored_words)
 
     return scored_words

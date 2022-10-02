@@ -1,8 +1,8 @@
 from itertools import groupby
 from numbers import Number
 from operator import itemgetter
-from rich import print as rprint
 from typing import List, Tuple
+from pdf_scout.logger import debug_log
 import statistics
 
 
@@ -15,7 +15,7 @@ def guess_left_margin(words) -> List[Number]:
         if count >= 0.1 * len(words_x0)
     ]
 
-    # rprint(locals())
+    debug_log("guess_left_margin locals:", locals())
 
     if len(threshold_counts) == 2:
         # assume different left margin on odd and even pages
@@ -131,6 +131,6 @@ def extract_all_words(pdf_file) -> List[dict[str, any]]:
         )
     ]
 
-    # rprint(locals())
+    debug_log("extract_all_words locals: ", locals())
 
     return all_words

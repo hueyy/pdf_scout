@@ -1,8 +1,8 @@
 from numbers import Number
 from pdf_scout.extract import extract_all_words
 from pdf_scout.scoring import score_words
+from pdf_scout.logger import debug_log
 from PyPDF2 import PdfMerger
-from rich import print as rprint
 from time import time
 from typing import List, Tuple, TypedDict
 from typing import Optional
@@ -41,28 +41,28 @@ def write_bookmarks(
 
     for rank, bookmark in bookmarks:
         add_bookmark = lambda p: add_bookmark_to_writer(merger, bookmark, p)
-        # rprint(rank, bookmark["title"])
+
+        debug_log("Rank: ", rank, bookmark["title"])
 
         if len(parent_bookmarks) == 0:
             new_bookmark = add_bookmark(None)
-            parent_bookmarks.append((rank, new_bookmark))
         else:
-            last = parent_bookmarks[-1]
-            last_rank, last_bookmark = last
+            last_rank, last_bookmark = parent_bookmarks[-1]
             if last_rank < rank:
                 new_bookmark = add_bookmark(last_bookmark)
-                parent_bookmarks.append((rank, new_bookmark))
-            elif last_rank == rank:
+            else:
                 parent_bookmarks.pop()
-                parent_bookmark = get_last_bookmark(parent_bookmarks)
-                new_bookmark = add_bookmark(parent_bookmark)
-                parent_bookmarks.append((rank, new_bookmark))
-            elif last_rank > rank:
-                parent_bookmarks.pop()
-                if len(parent_bookmarks) >= 1:
-                    parent_bookmarks.pop()
-                parent_bookmark = get_last_bookmark(parent_bookmarks)
-                new_bookmark = add_bookmark(parent_bookmark)
+                if last_rank == rank:
+                    parent_bookmark = get_last_bookmark(parent_bookmarks)
+                    new_bookmark = add_bookmark(parent_bookmark)
+                elif last_rank > rank:
+                    rank_difference = last_rank - rank
+                    for _ in range(rank_difference):
+                        if len(parent_bookmarks) >= 1:
+                            parent_bookmarks.pop()
+                    parent_bookmark = get_last_bookmark(parent_bookmarks)
+                    new_bookmark = add_bookmark(parent_bookmark)
+        parent_bookmarks.append((rank, new_bookmark))
 
     merger.write(output_path)
     merger.close()
@@ -113,7 +113,7 @@ def add_bookmarks_to_pdf(input_path: str, output_path: str = "", levels=3):
         for rank, word in top_scored_words
     ]
 
-    # rprint(locals())
+    debug_log("add_bookmarks_to_pdf locals: ", locals())
 
     write_bookmarks(input_path, output_path, bookmarks)
 
@@ -127,7 +127,7 @@ def main(input_file_path: str, output_file_path: Optional[str] = typer.Argument(
         raise typer.Exit(code=1)
     add_bookmarks_to_pdf(input_file_path, output_file_path)
     end_time = time()
-    rprint(f"Finished in {end_time - start_time}s")
+    print(f"Finished in {end_time - start_time}s")
 
 
 def start():

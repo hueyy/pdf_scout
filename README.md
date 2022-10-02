@@ -2,10 +2,12 @@
 
 This CLI tool automatically generates PDF bookmarks (also known as an 'outline' or a 'table of contents') for computer-generated PDF documents.
 
-```bash
-cd pdf_scout
-poetry install
-poetry run python ./src/app.py
+You can install it globally via pip:
+
+```
+pip install pdf_scout
+pdf_scout ./my_document.pdf
+pip uninstall pdf_scout
 ```
 
 ![screenshot](./assets/screenshot.png)
@@ -38,7 +40,7 @@ poetry run python ./src/app.py
 
 ### Tests
 
-There are snapshot tests. Input PDFs are not provided at the moment, so you will have populate the `/pdf` folder manually:
+There are snapshot tests. Input PDFs are not provided at the moment, so you will have to populate the `/pdf` folder manually:
 
 ```bash
 poetry run pytest

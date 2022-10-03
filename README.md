@@ -10,8 +10,9 @@ This CLI tool automatically generates PDF bookmarks (also known as an 'outline' 
 You can install it globally via pip:
 
 ```
-pip install pdf_scout
+pip install --user pdf_scout
 pdf_scout ./my_document.pdf
+
 pip uninstall pdf_scout
 ```
 

@@ -4,7 +4,7 @@ from pdf_scout.scoring import score_words
 from pdf_scout.logger import debug_log
 from PyPDF2 import PdfMerger
 from time import time
-from typing import Any, List, Optional, Tuple, TypedDict
+from typing import Any, List, Tuple, TypedDict
 import pdfplumber
 import typer
 
@@ -71,7 +71,7 @@ def open_pdf_file(input_path: str) -> pdfplumber.PDF:
     return pdfplumber.open(input_path)
 
 
-def add_bookmarks_to_pdf(input_path: str, output_path: str = "", levels: int=3):
+def add_bookmarks_to_pdf(input_path: str, output_path: str = "", levels: int = 3):
     if len(output_path) == 0:
         input_path_start, _ = input_path.split(".pdf")
         output_path = f"{input_path_start}-out.pdf"

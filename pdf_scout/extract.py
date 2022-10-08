@@ -1,9 +1,11 @@
 from itertools import groupby
 from numbers import Number
 from operator import itemgetter
-from typing import Any, List, Tuple
+from typing import List, Tuple
 from pdf_scout.logger import debug_log
+from pdf_scout.types import RawWord, Word
 import statistics
+import pdfplumber
 
 
 def guess_left_margin(words) -> List[Number]:
@@ -31,7 +33,9 @@ def guess_left_margin(words) -> List[Number]:
         )
 
 
-def add_line_spacing_to_words(pdf_file, all_words: List[dict[str, Any]]):
+def add_line_spacing_to_words(
+    pdf_file: pdfplumber.PDF, all_words: List[RawWord]
+) -> List[Word]:
     # add distance from previous & next line
     # assumes all lines are perfectly horizontal and of full width
     line_positions: List[Tuple[int, List[Number]]] = [
@@ -46,21 +50,23 @@ def add_line_spacing_to_words(pdf_file, all_words: List[dict[str, Any]]):
     ]
 
 
-def guess_body_spacing(words) -> Tuple[Number, Number]:
+def guess_body_spacing(words: List[Word]) -> Tuple[Number, Number]:
     return (
         statistics.mode([word["top_spacing"] for word in words]),
         statistics.mode([word["bottom_spacing"] for word in words]),
     )
 
 
-def get_word_line_position(word) -> Number:
+def get_word_line_position(word: RawWord) -> Number:
     return word["top"]
 
 
 def add_line_spacing_to_word(
     # Adds top_spacing and bottom_spacing to dict.
-    line_positions: List[Tuple[int, List[Number]]], word, pdf_file
-):
+    line_positions: List[Tuple[int, List[Number]]],
+    word: RawWord,
+    pdf_file: pdfplumber.PDF,
+) -> Word:
     page_line_positions = [
         page_lines
         for page_number, page_lines in line_positions
@@ -74,19 +80,19 @@ def add_line_spacing_to_word(
         if index < len(page_line_positions) - 1
         else pdf_file.pages[word["page_number"] - 1].height
     )
-    return dict(
+    return {
         **word,
-        top_spacing=round(cur_line_position - prev_line_position, 2),
-        bottom_spacing=round(next_line_position - cur_line_position, 2),
-    )
+        "top_spacing": round(cur_line_position - prev_line_position, 2),
+        "bottom_spacing": round(next_line_position - cur_line_position, 2),
+    }
 
 
-def raw_extract_words(pdf_file) -> List[dict[str, any]]:
+def raw_extract_words(pdf_file: pdfplumber.PDF) -> List[RawWord]:
     all_words = [
         word
         for page_list in (
             [
-                dict(**word, page_number=page.page_number)
+                {**word, "text": word["text"].strip(), "page_number": page.page_number}
                 for word in page.extract_words(
                     keep_blank_chars=True,
                     use_text_flow=True,
@@ -96,11 +102,12 @@ def raw_extract_words(pdf_file) -> List[dict[str, any]]:
             for page in pdf_file.pages
         )
         for word in page_list
+        if (len(word["text"]) > 0)  # ignore all words that are just whitespace
     ]
     return all_words
 
 
-def extract_all_words(pdf_file) -> List[dict[str, any]]:
+def extract_all_words(pdf_file: pdfplumber.PDF) -> List[Word]:
     """
     Returns a list of dicts something like
     {
@@ -122,7 +129,9 @@ def extract_all_words(pdf_file) -> List[dict[str, any]]:
     raw_words = raw_extract_words(pdf_file)
     all_words_with_line_spacing = add_line_spacing_to_words(pdf_file, raw_words)
 
-    body_top_spacing, body_bottom_spacing = guess_body_spacing(all_words_with_line_spacing)
+    body_top_spacing, body_bottom_spacing = guess_body_spacing(
+        all_words_with_line_spacing
+    )
 
     # TODO: add some margin of appreciation to account for indented headers, footnotes, etc
     # TODO: handle center-aligned text

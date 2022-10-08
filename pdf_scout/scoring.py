@@ -1,6 +1,7 @@
 from numbers import Number
 from pdf_scout.logger import debug_log
-from typing import Any, List, Tuple, TypedDict
+from pdf_scout.types import Word
+from typing import List, Tuple, TypedDict
 import re
 import statistics
 
@@ -42,7 +43,7 @@ class HeadingScore(TypedDict):
     overall: Number
 
 
-def get_heading_score(word) -> HeadingScore:
+def get_heading_score(word: Word) -> HeadingScore:
     font_name: str = word["fontname"]
     font_size: Number = word["size"]
     length: int = len(word["text"].strip(" []()./|"))
@@ -61,12 +62,14 @@ def get_heading_score(word) -> HeadingScore:
     }
 
 
-def guess_body_score(word_list: Tuple[HeadingScore, Any]) -> Number:
+def guess_body_score(word_list: Tuple[HeadingScore, Word]) -> Number:
     return statistics.mode([score["font"] for score, _ in word_list])
 
 
-def score_words(all_words: List[Any], non_body_words: List[Any]):
-    scored_all_words: List[Tuple[HeadingScore, Any]] = [
+def score_words(
+    all_words: List[Word], non_body_words: List[Word]
+) -> Tuple(Number, Word):
+    scored_all_words: List[Tuple[HeadingScore, Word]] = [
         (get_heading_score(word), word) for word in all_words
     ]
     body_score = guess_body_score(scored_all_words)

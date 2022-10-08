@@ -52,7 +52,7 @@ poetry shell
 To run a script directly, run:
 
 ```bash
-poetry run python ./src/app.py
+poetry run python ./pdf_scout/app.py <INPUT_FILE_PATH>
 ```
 
 ### Tests

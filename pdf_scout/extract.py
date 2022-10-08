@@ -1,7 +1,7 @@
 from itertools import groupby
 from numbers import Number
 from operator import itemgetter
-from typing import List, Tuple
+from typing import Any, List, Tuple
 from pdf_scout.logger import debug_log
 import statistics
 
@@ -31,7 +31,7 @@ def guess_left_margin(words) -> List[Number]:
         )
 
 
-def add_line_spacing_to_words(pdf_file, all_words):
+def add_line_spacing_to_words(pdf_file, all_words: List[dict[str, Any]]):
     # add distance from previous & next line
     # assumes all lines are perfectly horizontal and of full width
     line_positions: List[Tuple[int, List[Number]]] = [
@@ -58,6 +58,7 @@ def get_word_line_position(word) -> Number:
 
 
 def add_line_spacing_to_word(
+    # Adds top_spacing and bottom_spacing to dict.
     line_positions: List[Tuple[int, List[Number]]], word, pdf_file
 ):
     page_line_positions = [
@@ -100,18 +101,36 @@ def raw_extract_words(pdf_file) -> List[dict[str, any]]:
 
 
 def extract_all_words(pdf_file) -> List[dict[str, any]]:
-    all_words = raw_extract_words(pdf_file)
-    all_words = add_line_spacing_to_words(pdf_file, all_words)
+    """
+    Returns a list of dicts something like
+    {
+      'text': 'Law Society of Singapore v Loh Wai Mun Daniel[2004] SGHC 36',
+      'x0': 164.60769147751603,
+      'x1': 430.66493976121933,
+      'top': 56.17809901052692,
+      'doctop': 56.17809901052692,
+      'bottom': 85.4280988218394,
+      'upright': True, 'direction': 1,
+      'fontname': 'QDBAAA+ArialRegular',
+      'size': 14.249999908075324,
+      'page_number': 1,
+      'top_spacing': 56.18,
+      'bottom_spacing': 35.35
+    }
+    """
 
-    body_top_spacing, body_bottom_spacing = guess_body_spacing(all_words)
+    raw_words = raw_extract_words(pdf_file)
+    all_words_with_line_spacing = add_line_spacing_to_words(pdf_file, raw_words)
+
+    body_top_spacing, body_bottom_spacing = guess_body_spacing(all_words_with_line_spacing)
 
     # TODO: add some margin of appreciation to account for indented headers, footnotes, etc
     # TODO: handle center-aligned text
-    left_margins = guess_left_margin(all_words)
+    left_margins = guess_left_margin(all_words_with_line_spacing)
 
     non_body_words = [
         word
-        for word in all_words
+        for word in all_words_with_line_spacing
         if (
             (
                 # ignore all words with normal paragraph spacing
@@ -127,4 +146,4 @@ def extract_all_words(pdf_file) -> List[dict[str, any]]:
 
     debug_log("extract_all_words locals: ", locals())
 
-    return all_words, non_body_words
+    return all_words_with_line_spacing, non_body_words

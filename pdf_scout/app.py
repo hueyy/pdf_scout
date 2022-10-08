@@ -4,8 +4,7 @@ from pdf_scout.scoring import score_words
 from pdf_scout.logger import debug_log
 from PyPDF2 import PdfMerger
 from time import time
-from typing import List, Tuple, TypedDict
-from typing import Optional
+from typing import Any, List, Optional, Tuple, TypedDict
 import pdfplumber
 import typer
 
@@ -22,7 +21,7 @@ def write_bookmarks(
     merger = PdfMerger()
     merger.append(input_path, import_outline=False)  # disregard existing outline
 
-    parent_bookmarks: List[Tuple(int, any)] = []
+    parent_bookmarks: List[Tuple(int, Any)] = []
     # last item in list is last outline item added
 
     add_bookmark_to_writer = lambda writer, bookmark, parent: writer.add_outline_item(
@@ -66,14 +65,13 @@ def write_bookmarks(
 
     merger.write(output_path)
     merger.close()
-    return None
 
 
 def open_pdf_file(input_path: str) -> pdfplumber.PDF:
     return pdfplumber.open(input_path)
 
 
-def add_bookmarks_to_pdf(input_path: str, output_path: str = "", levels=3):
+def add_bookmarks_to_pdf(input_path: str, output_path: str = "", levels: int=3):
     if len(output_path) == 0:
         input_path_start, _ = input_path.split(".pdf")
         output_path = f"{input_path_start}-out.pdf"
@@ -115,8 +113,9 @@ def add_bookmarks_to_pdf(input_path: str, output_path: str = "", levels=3):
     pdf_file.close()
 
 
-def main(input_file_path: str, output_file_path: Optional[str] = typer.Argument("")):
+def main(input_file_path: str, output_file_path: str = typer.Argument("")):
     start_time = time()
+
     if input_file_path is None or len(input_file_path) == 0:
         print("Error: file_path not provided")
         raise typer.Exit(code=1)

@@ -57,7 +57,7 @@ poetry run python ./pdf_scout/app.py <INPUT_FILE_PATH>
 
 ### Tests
 
-There are snapshot tests. Input PDFs are not provided at the moment, so you will have to populate the `/pdf` folder manually:
+There are snapshot tests. Input PDFs are not provided at the moment, so you will have to populate the `/pdf` folder manually using the relevant sources (you may want to consider using [Clerkent](https://clerkent.huey.xyz) to download the unreported versions of judgments):
 
 ```bash
 poetry run pytest

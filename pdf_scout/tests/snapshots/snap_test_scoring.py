@@ -7,7 +7,7 @@ from snapshottest import Snapshot
 
 snapshots = Snapshot()
 
-snapshots['test_score_words 1'] = [
+snapshots['test_score_words[./pdf/Law Society of Singapore v Loh Wai Mun Daniel [2004] SGHC 36 - Judgment.pdf] 1'] = [
     (
         {
             'font': 32.0,
@@ -154,730 +154,7 @@ snapshots['test_score_words 1'] = [
     )
 ]
 
-snapshots['test_score_words 2'] = [
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 104.2813701917197,
-            'bottom_spacing': 17.25,
-            'direction': 1,
-            'doctop': 92.28137026912998,
-            'fontname': 'QEIAAA+VerdanaBold',
-            'page_number': 1,
-            'size': 11.999999922589723,
-            'text': 'Case Number',
-            'top': 92.28137026912998,
-            'top_spacing': 35.35,
-            'upright': True,
-            'x0': 42.35769226613301,
-            'x1': 115.47969179443359
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 121.53137008044246,
-            'bottom_spacing': 17.25,
-            'direction': 1,
-            'doctop': 109.53137015785273,
-            'fontname': 'QEIAAA+VerdanaBold',
-            'page_number': 1,
-            'size': 11.999999922589723,
-            'text': 'Decision Date',
-            'top': 109.53137015785273,
-            'top_spacing': 17.25,
-            'upright': True,
-            'x0': 42.35769226613301,
-            'x1': 116.36169178874394
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 138.7813699691652,
-            'bottom_spacing': 17.25,
-            'direction': 1,
-            'doctop': 126.78137004657549,
-            'fontname': 'QEIAAA+VerdanaBold',
-            'page_number': 1,
-            'size': 11.999999922589723,
-            'text': 'Tribunal/Court',
-            'top': 126.78137004657549,
-            'top_spacing': 17.25,
-            'upright': True,
-            'x0': 42.35769226613301,
-            'x1': 122.57169174868413
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 156.03136985788797,
-            'bottom_spacing': 17.25,
-            'direction': 1,
-            'doctop': 144.03136993529824,
-            'fontname': 'QEIAAA+VerdanaBold',
-            'page_number': 1,
-            'size': 11.999999922589723,
-            'text': 'Coram',
-            'top': 144.03136993529824,
-            'top_spacing': 17.25,
-            'upright': True,
-            'x0': 42.35769226613301,
-            'x1': 78.22569203475375
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 173.28136974661072,
-            'bottom_spacing': 41.25,
-            'direction': 1,
-            'doctop': 161.281369824021,
-            'fontname': 'QEIAAA+VerdanaBold',
-            'page_number': 1,
-            'size': 11.999999922589723,
-            'text': 'Counsel Name(s)',
-            'top': 161.281369824021,
-            'top_spacing': 17.25,
-            'upright': True,
-            'x0': 42.35769226613301,
-            'x1': 136.9356916560241
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 214.53136948051292,
-            'bottom_spacing': 27.0,
-            'direction': 1,
-            'doctop': 202.5313695579232,
-            'fontname': 'QEIAAA+VerdanaBold',
-            'page_number': 1,
-            'size': 11.999999922589723,
-            'text': 'Parties',
-            'top': 202.5313695579232,
-            'top_spacing': 41.25,
-            'upright': True,
-            'x0': 42.35769226613301,
-            'x1': 80.41569202062637
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 241.5313693063398,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 229.53136938375008,
-            'fontname': 'QKHAAA+VerdanaItalic',
-            'page_number': 1,
-            'size': 11.999999922589723,
-            'text': 'Copyright',
-            'top': 229.53136938375008,
-            'top_spacing': 27.0,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 88.97169196543287
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 269.2813691273286,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 257.2813692047389,
-            'fontname': 'QKHAAA+VerdanaItalic',
-            'page_number': 1,
-            'size': 11.999999922589723,
-            'text': 'Copyright',
-            'top': 257.2813692047389,
-            'top_spacing': 27.75,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 88.97169196543287
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 297.03136894831744,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 285.0313690257277,
-            'fontname': 'QKHAAA+VerdanaItalic',
-            'page_number': 1,
-            'size': 11.999999922589723,
-            'text': 'Words and Phrases',
-            'top': 285.0313690257277,
-            'top_spacing': 27.75,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 135.957691662333
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 425.2813681209953,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 413.2813681984055,
-            'fontname': 'QEIAAA+VerdanaBold',
-            'page_number': 1,
-            'size': 11.99999992258978,
-            'text': 'V K Rajah JA (delivering the judgment of the court):',
-            'top': 413.2813681984055,
-            'top_spacing': 50.25,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 322.29369046030655
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 453.03136794198406,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 441.0313680193943,
-            'fontname': 'QEIAAA+VerdanaBold',
-            'page_number': 1,
-            'size': 11.99999992258978,
-            'text': 'Introduction',
-            'top': 441.0313680193943,
-            'top_spacing': 27.75,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 109.32969183410636
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 110.28136841393757,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 940.2813684913478,
-            'fontname': 'QEIAAA+VerdanaBold',
-            'page_number': 2,
-            'size': 11.999999922589723,
-            'text': 'The facts',
-            'top': 98.28136849134785,
-            'top_spacing': 27.75,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 90.9156919528924
-        }
-    ),
-    (
-        {
-            'font': 22.0,
-            'font_name': 10,
-            'font_size': 12.0,
-            'overall': 122.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 138.0313682349264,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 968.0313683123367,
-            'fontname': 'QUHAAA+VerdanaBoldItalic',
-            'page_number': 2,
-            'size': 11.999999922589723,
-            'text': 'Parties to the dispute',
-            'top': 126.03136831233667,
-            'top_spacing': 27.75,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 158.36169151780805
-        }
-    ),
-    (
-        {
-            'font': 22.0,
-            'font_name': 10,
-            'font_size': 12.0,
-            'overall': 122.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 732.7813643982805,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 1562.7813644756907,
-            'fontname': 'QUHAAA+VerdanaBoldItalic',
-            'page_number': 2,
-            'size': 11.999999922589737,
-            'text': 'RecordTV’s iDVR service – a time-shifting service',
-            'top': 720.7813644756908,
-            'top_spacing': 42.0,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 306.1116905646943
-        }
-    ),
-    (
-        {
-            'font': 22.0,
-            'font_name': 10,
-            'font_size': 12.0,
-            'overall': 122.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 252.7813584780755,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 2766.781358555486,
-            'fontname': 'QUHAAA+VerdanaBoldItalic',
-            'page_number': 4,
-            'size': 11.999999922589723,
-            'text': 'Litigation between the parties',
-            'top': 240.78135855548578,
-            'top_spacing': 27.75,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 204.91569121749495
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 422.2813573846555,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 2936.281357462066,
-            'fontname': 'QEIAAA+VerdanaBold',
-            'page_number': 4,
-            'size': 11.99999992258978,
-            'text': 'Our approach in this appeal',
-            'top': 410.2813574620657,
-            'top_spacing': 56.25,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 191.20569130593617
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 663.0313558316124,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 3177.0313559090227,
-            'fontname': 'QEIAAA+VerdanaBold',
-            'page_number': 4,
-            'size': 11.999999922589723,
-            'text': 'MediaCorp’s counterclaim against RecordTV for copyright infringement',
-            'top': 651.0313559090226,
-            'top_spacing': 56.25,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 425.57168979407516
-        }
-    ),
-    (
-        {
-            'font': 22.0,
-            'font_name': 10,
-            'font_size': 12.0,
-            'overall': 122.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 690.7813556526011,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 3204.7813557300115,
-            'fontname': 'QUHAAA+VerdanaBoldItalic',
-            'page_number': 4,
-            'size': 11.999999922589723,
-            'text': 'The relevant provisions of the Copyright Act',
-            'top': 678.7813557300113,
-            'top_spacing': 27.75,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 279.32169073751265
-        }
-    ),
-    (
-        {
-            'font': 22.0,
-            'font_name': 10,
-            'font_size': 12.0,
-            'overall': 122.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 559.5313547601985,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 3915.531354837609,
-            'fontname': 'QUHAAA+VerdanaBoldItalic',
-            'page_number': 5,
-            'size': 11.99999992258978,
-            'text': 'The issues to be decided in MediaCorp’s counterclaim',
-            'top': 547.5313548376087,
-            'top_spacing': 27.75,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 329.47569041397645
-        }
-    ),
-    (
-        {
-            'font': 22.0,
-            'font_name': 10,
-            'font_size': 12.0,
-            'overall': 122.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 168.7813555417937,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 4366.781355619204,
-            'fontname': 'QUHAAA+VerdanaBoldItalic',
-            'page_number': 6,
-            'size': 11.999999922589723,
-            'text': 'The First Issue: Did RecordTV copy the MediaCorp shows?',
-            'top': 156.78135561920396,
-            'top_spacing': 99.0,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 352.89369026291035
-        }
-    ),
-    (
-        {
-            'font': 22.0,
-            'font_name': 10,
-            'font_size': 12.0,
-            'overall': 122.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 746.2813427998093,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 6628.28134287722,
-            'fontname': 'QUHAAA+VerdanaBoldItalic',
-            'page_number': 8,
-            'size': 11.999999922589737,
-            'text': 'The Second Issue: Did RecordTV communicate the MediaCorp shows to the public?',
-            'top': 734.2813428772196,
-            'top_spacing': 27.75,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 484.1436894162357
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 167.28137802654544,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 6891.281378103956,
-            'fontname': 'QKHAAA+VerdanaItalic',
-            'page_number': 9,
-            'size': 11.999999922589723,
-            'text': 'Communications to “the public”',
-            'top': 155.28137810395572,
-            'top_spacing': 56.25,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 199.8456912502008
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 709.5313340202632,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 8275.531334097674,
-            'fontname': 'QKHAAA+VerdanaItalic',
-            'page_number': 10,
-            'size': 11.999999922589723,
-            'text': 'The communicator',
-            'top': 697.5313340976735,
-            'top_spacing': 27.75,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 136.5336916586173
-        }
-    ),
-    (
-        {
-            'font': 22.0,
-            'font_name': 10,
-            'font_size': 12.0,
-            'overall': 22.0,
-            'word_length': 0
-        },
-        {
-            'bottom': 696.7813382231283,
-            'bottom_spacing': 42.0,
-            'direction': 1,
-            'doctop': 11616.531338392462,
-            'fontname': 'QUHAAA+VerdanaBoldItalic',
-            'page_number': 14,
-            'size': 11.999999922589723,
-            'text': 'The Third Issue: Did RecordTV authorise the doing in Singapore of any act comprised inMediaCorp’s copyright?',
-            'top': 670.531338392463,
-            'top_spacing': 42.0,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 509.0796892553771
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 279.0313557942785,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 12055.031355871688,
-            'fontname': 'QKHAAA+VerdanaItalic',
-            'page_number': 15,
-            'size': 11.999999922589723,
-            'text': 'The concept of authorisation liability',
-            'top': 267.0313558716888,
-            'top_spacing': 70.5,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 224.3916910918581
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 717.0313529688041,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 12493.031353046214,
-            'fontname': 'QKHAAA+VerdanaItalic',
-            'page_number': 15,
-            'size': 11.999999922589737,
-            'text': 'Our reasons for ruling in favour of RecordTV on the Third Issue',
-            'top': 705.0313530462143,
-            'top_spacing': 27.75,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 359.4396902206831
-        }
-    ),
-    (
-        {
-            'font': 22.0,
-            'font_name': 10,
-            'font_size': 12.0,
-            'overall': 122.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 124.53133527955231,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 16952.53133535696,
-            'fontname': 'QUHAAA+VerdanaBoldItalic',
-            'page_number': 21,
-            'size': 11.999999922589723,
-            'text': 'The provisions on safe harbour and fair dealing',
-            'top': 112.53133535696259,
-            'top_spacing': 27.75,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 295.95969063018333
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 265.5313343699812,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 17093.53133444739,
-            'fontname': 'QEIAAA+VerdanaBold',
-            'page_number': 21,
-            'size': 11.999999922589723,
-            'text': 'RecordTV’s claim against MediaCorp under s 200(1) of the Copyright Act',
-            'top': 253.5313344473915,
-            'top_spacing': 113.25,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 433.8216897408556
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 700.531331563859,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 17528.53133164127,
-            'fontname': 'QEIAAA+VerdanaBold',
-            'page_number': 21,
-            'size': 11.999999922589723,
-            'text': 'Conclusion',
-            'top': 688.5313316412693,
-            'top_spacing': 84.75,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 101.07969188732591
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 96.03129495509472,
-            'bottom_spacing': 27.75,
-            'direction': 1,
-            'doctop': 17766.031295032506,
-            'fontname': 'QEIAAA+VerdanaBold',
-            'page_number': 22,
-            'size': 11.999999922589723,
-            'text': 'Observations',
-            'top': 84.031295032505,
-            'top_spacing': 27.75,
-            'upright': True,
-            'x0': 41.60769227097115,
-            'x1': 114.16569180291002
-        }
-    )
-]
-
-snapshots['test_score_words 3'] = [
+snapshots['test_score_words[./pdf/PUBLIC PROSECUTOR v GCK [2020] SGCA 2 - Judgment.pdf] 1'] = [
     (
         {
             'font': 32.0,
@@ -4024,7 +3301,730 @@ snapshots['test_score_words 3'] = [
     )
 ]
 
-snapshots['test_score_words 4'] = [
+snapshots['test_score_words[./pdf/RecordTV Pte Ltd v MediaCorp TV Singapore Pte Ltd and others [2010] SGCA 43 - Judgment.pdf] 1'] = [
+    (
+        {
+            'font': 32.0,
+            'font_name': 20,
+            'font_size': 12.0,
+            'overall': 132.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 104.2813701917197,
+            'bottom_spacing': 17.25,
+            'direction': 1,
+            'doctop': 92.28137026912998,
+            'fontname': 'QEIAAA+VerdanaBold',
+            'page_number': 1,
+            'size': 11.999999922589723,
+            'text': 'Case Number',
+            'top': 92.28137026912998,
+            'top_spacing': 35.35,
+            'upright': True,
+            'x0': 42.35769226613301,
+            'x1': 115.47969179443359
+        }
+    ),
+    (
+        {
+            'font': 32.0,
+            'font_name': 20,
+            'font_size': 12.0,
+            'overall': 132.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 121.53137008044246,
+            'bottom_spacing': 17.25,
+            'direction': 1,
+            'doctop': 109.53137015785273,
+            'fontname': 'QEIAAA+VerdanaBold',
+            'page_number': 1,
+            'size': 11.999999922589723,
+            'text': 'Decision Date',
+            'top': 109.53137015785273,
+            'top_spacing': 17.25,
+            'upright': True,
+            'x0': 42.35769226613301,
+            'x1': 116.36169178874394
+        }
+    ),
+    (
+        {
+            'font': 32.0,
+            'font_name': 20,
+            'font_size': 12.0,
+            'overall': 132.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 138.7813699691652,
+            'bottom_spacing': 17.25,
+            'direction': 1,
+            'doctop': 126.78137004657549,
+            'fontname': 'QEIAAA+VerdanaBold',
+            'page_number': 1,
+            'size': 11.999999922589723,
+            'text': 'Tribunal/Court',
+            'top': 126.78137004657549,
+            'top_spacing': 17.25,
+            'upright': True,
+            'x0': 42.35769226613301,
+            'x1': 122.57169174868413
+        }
+    ),
+    (
+        {
+            'font': 32.0,
+            'font_name': 20,
+            'font_size': 12.0,
+            'overall': 132.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 156.03136985788797,
+            'bottom_spacing': 17.25,
+            'direction': 1,
+            'doctop': 144.03136993529824,
+            'fontname': 'QEIAAA+VerdanaBold',
+            'page_number': 1,
+            'size': 11.999999922589723,
+            'text': 'Coram',
+            'top': 144.03136993529824,
+            'top_spacing': 17.25,
+            'upright': True,
+            'x0': 42.35769226613301,
+            'x1': 78.22569203475375
+        }
+    ),
+    (
+        {
+            'font': 32.0,
+            'font_name': 20,
+            'font_size': 12.0,
+            'overall': 132.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 173.28136974661072,
+            'bottom_spacing': 41.25,
+            'direction': 1,
+            'doctop': 161.281369824021,
+            'fontname': 'QEIAAA+VerdanaBold',
+            'page_number': 1,
+            'size': 11.999999922589723,
+            'text': 'Counsel Name(s)',
+            'top': 161.281369824021,
+            'top_spacing': 17.25,
+            'upright': True,
+            'x0': 42.35769226613301,
+            'x1': 136.9356916560241
+        }
+    ),
+    (
+        {
+            'font': 32.0,
+            'font_name': 20,
+            'font_size': 12.0,
+            'overall': 132.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 214.53136948051292,
+            'bottom_spacing': 27.0,
+            'direction': 1,
+            'doctop': 202.5313695579232,
+            'fontname': 'QEIAAA+VerdanaBold',
+            'page_number': 1,
+            'size': 11.999999922589723,
+            'text': 'Parties',
+            'top': 202.5313695579232,
+            'top_spacing': 41.25,
+            'upright': True,
+            'x0': 42.35769226613301,
+            'x1': 80.41569202062637
+        }
+    ),
+    (
+        {
+            'font': 17.0,
+            'font_name': 5,
+            'font_size': 12.0,
+            'overall': 117.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 241.5313693063398,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 229.53136938375008,
+            'fontname': 'QKHAAA+VerdanaItalic',
+            'page_number': 1,
+            'size': 11.999999922589723,
+            'text': 'Copyright',
+            'top': 229.53136938375008,
+            'top_spacing': 27.0,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 88.97169196543287
+        }
+    ),
+    (
+        {
+            'font': 17.0,
+            'font_name': 5,
+            'font_size': 12.0,
+            'overall': 117.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 269.2813691273286,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 257.2813692047389,
+            'fontname': 'QKHAAA+VerdanaItalic',
+            'page_number': 1,
+            'size': 11.999999922589723,
+            'text': 'Copyright',
+            'top': 257.2813692047389,
+            'top_spacing': 27.75,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 88.97169196543287
+        }
+    ),
+    (
+        {
+            'font': 17.0,
+            'font_name': 5,
+            'font_size': 12.0,
+            'overall': 117.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 297.03136894831744,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 285.0313690257277,
+            'fontname': 'QKHAAA+VerdanaItalic',
+            'page_number': 1,
+            'size': 11.999999922589723,
+            'text': 'Words and Phrases',
+            'top': 285.0313690257277,
+            'top_spacing': 27.75,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 135.957691662333
+        }
+    ),
+    (
+        {
+            'font': 32.0,
+            'font_name': 20,
+            'font_size': 12.0,
+            'overall': 132.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 425.2813681209953,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 413.2813681984055,
+            'fontname': 'QEIAAA+VerdanaBold',
+            'page_number': 1,
+            'size': 11.99999992258978,
+            'text': 'V K Rajah JA (delivering the judgment of the court):',
+            'top': 413.2813681984055,
+            'top_spacing': 50.25,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 322.29369046030655
+        }
+    ),
+    (
+        {
+            'font': 32.0,
+            'font_name': 20,
+            'font_size': 12.0,
+            'overall': 132.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 453.03136794198406,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 441.0313680193943,
+            'fontname': 'QEIAAA+VerdanaBold',
+            'page_number': 1,
+            'size': 11.99999992258978,
+            'text': 'Introduction',
+            'top': 441.0313680193943,
+            'top_spacing': 27.75,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 109.32969183410636
+        }
+    ),
+    (
+        {
+            'font': 32.0,
+            'font_name': 20,
+            'font_size': 12.0,
+            'overall': 132.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 110.28136841393757,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 940.2813684913478,
+            'fontname': 'QEIAAA+VerdanaBold',
+            'page_number': 2,
+            'size': 11.999999922589723,
+            'text': 'The facts',
+            'top': 98.28136849134785,
+            'top_spacing': 27.75,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 90.9156919528924
+        }
+    ),
+    (
+        {
+            'font': 22.0,
+            'font_name': 10,
+            'font_size': 12.0,
+            'overall': 122.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 138.0313682349264,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 968.0313683123367,
+            'fontname': 'QUHAAA+VerdanaBoldItalic',
+            'page_number': 2,
+            'size': 11.999999922589723,
+            'text': 'Parties to the dispute',
+            'top': 126.03136831233667,
+            'top_spacing': 27.75,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 158.36169151780805
+        }
+    ),
+    (
+        {
+            'font': 22.0,
+            'font_name': 10,
+            'font_size': 12.0,
+            'overall': 122.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 732.7813643982805,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 1562.7813644756907,
+            'fontname': 'QUHAAA+VerdanaBoldItalic',
+            'page_number': 2,
+            'size': 11.999999922589737,
+            'text': 'RecordTV’s iDVR service – a time-shifting service',
+            'top': 720.7813644756908,
+            'top_spacing': 42.0,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 306.1116905646943
+        }
+    ),
+    (
+        {
+            'font': 22.0,
+            'font_name': 10,
+            'font_size': 12.0,
+            'overall': 122.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 252.7813584780755,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 2766.781358555486,
+            'fontname': 'QUHAAA+VerdanaBoldItalic',
+            'page_number': 4,
+            'size': 11.999999922589723,
+            'text': 'Litigation between the parties',
+            'top': 240.78135855548578,
+            'top_spacing': 27.75,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 204.91569121749495
+        }
+    ),
+    (
+        {
+            'font': 32.0,
+            'font_name': 20,
+            'font_size': 12.0,
+            'overall': 132.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 422.2813573846555,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 2936.281357462066,
+            'fontname': 'QEIAAA+VerdanaBold',
+            'page_number': 4,
+            'size': 11.99999992258978,
+            'text': 'Our approach in this appeal',
+            'top': 410.2813574620657,
+            'top_spacing': 56.25,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 191.20569130593617
+        }
+    ),
+    (
+        {
+            'font': 32.0,
+            'font_name': 20,
+            'font_size': 12.0,
+            'overall': 132.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 663.0313558316124,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 3177.0313559090227,
+            'fontname': 'QEIAAA+VerdanaBold',
+            'page_number': 4,
+            'size': 11.999999922589723,
+            'text': 'MediaCorp’s counterclaim against RecordTV for copyright infringement',
+            'top': 651.0313559090226,
+            'top_spacing': 56.25,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 425.57168979407516
+        }
+    ),
+    (
+        {
+            'font': 22.0,
+            'font_name': 10,
+            'font_size': 12.0,
+            'overall': 122.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 690.7813556526011,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 3204.7813557300115,
+            'fontname': 'QUHAAA+VerdanaBoldItalic',
+            'page_number': 4,
+            'size': 11.999999922589723,
+            'text': 'The relevant provisions of the Copyright Act',
+            'top': 678.7813557300113,
+            'top_spacing': 27.75,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 279.32169073751265
+        }
+    ),
+    (
+        {
+            'font': 22.0,
+            'font_name': 10,
+            'font_size': 12.0,
+            'overall': 122.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 559.5313547601985,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 3915.531354837609,
+            'fontname': 'QUHAAA+VerdanaBoldItalic',
+            'page_number': 5,
+            'size': 11.99999992258978,
+            'text': 'The issues to be decided in MediaCorp’s counterclaim',
+            'top': 547.5313548376087,
+            'top_spacing': 27.75,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 329.47569041397645
+        }
+    ),
+    (
+        {
+            'font': 22.0,
+            'font_name': 10,
+            'font_size': 12.0,
+            'overall': 122.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 168.7813555417937,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 4366.781355619204,
+            'fontname': 'QUHAAA+VerdanaBoldItalic',
+            'page_number': 6,
+            'size': 11.999999922589723,
+            'text': 'The First Issue: Did RecordTV copy the MediaCorp shows?',
+            'top': 156.78135561920396,
+            'top_spacing': 99.0,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 352.89369026291035
+        }
+    ),
+    (
+        {
+            'font': 22.0,
+            'font_name': 10,
+            'font_size': 12.0,
+            'overall': 122.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 746.2813427998093,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 6628.28134287722,
+            'fontname': 'QUHAAA+VerdanaBoldItalic',
+            'page_number': 8,
+            'size': 11.999999922589737,
+            'text': 'The Second Issue: Did RecordTV communicate the MediaCorp shows to the public?',
+            'top': 734.2813428772196,
+            'top_spacing': 27.75,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 484.1436894162357
+        }
+    ),
+    (
+        {
+            'font': 17.0,
+            'font_name': 5,
+            'font_size': 12.0,
+            'overall': 117.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 167.28137802654544,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 6891.281378103956,
+            'fontname': 'QKHAAA+VerdanaItalic',
+            'page_number': 9,
+            'size': 11.999999922589723,
+            'text': 'Communications to “the public”',
+            'top': 155.28137810395572,
+            'top_spacing': 56.25,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 199.8456912502008
+        }
+    ),
+    (
+        {
+            'font': 17.0,
+            'font_name': 5,
+            'font_size': 12.0,
+            'overall': 117.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 709.5313340202632,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 8275.531334097674,
+            'fontname': 'QKHAAA+VerdanaItalic',
+            'page_number': 10,
+            'size': 11.999999922589723,
+            'text': 'The communicator',
+            'top': 697.5313340976735,
+            'top_spacing': 27.75,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 136.5336916586173
+        }
+    ),
+    (
+        {
+            'font': 22.0,
+            'font_name': 10,
+            'font_size': 12.0,
+            'overall': 22.0,
+            'word_length': 0
+        },
+        {
+            'bottom': 696.7813382231283,
+            'bottom_spacing': 42.0,
+            'direction': 1,
+            'doctop': 11616.531338392462,
+            'fontname': 'QUHAAA+VerdanaBoldItalic',
+            'page_number': 14,
+            'size': 11.999999922589723,
+            'text': 'The Third Issue: Did RecordTV authorise the doing in Singapore of any act comprised inMediaCorp’s copyright?',
+            'top': 670.531338392463,
+            'top_spacing': 42.0,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 509.0796892553771
+        }
+    ),
+    (
+        {
+            'font': 17.0,
+            'font_name': 5,
+            'font_size': 12.0,
+            'overall': 117.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 279.0313557942785,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 12055.031355871688,
+            'fontname': 'QKHAAA+VerdanaItalic',
+            'page_number': 15,
+            'size': 11.999999922589723,
+            'text': 'The concept of authorisation liability',
+            'top': 267.0313558716888,
+            'top_spacing': 70.5,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 224.3916910918581
+        }
+    ),
+    (
+        {
+            'font': 17.0,
+            'font_name': 5,
+            'font_size': 12.0,
+            'overall': 117.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 717.0313529688041,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 12493.031353046214,
+            'fontname': 'QKHAAA+VerdanaItalic',
+            'page_number': 15,
+            'size': 11.999999922589737,
+            'text': 'Our reasons for ruling in favour of RecordTV on the Third Issue',
+            'top': 705.0313530462143,
+            'top_spacing': 27.75,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 359.4396902206831
+        }
+    ),
+    (
+        {
+            'font': 22.0,
+            'font_name': 10,
+            'font_size': 12.0,
+            'overall': 122.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 124.53133527955231,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 16952.53133535696,
+            'fontname': 'QUHAAA+VerdanaBoldItalic',
+            'page_number': 21,
+            'size': 11.999999922589723,
+            'text': 'The provisions on safe harbour and fair dealing',
+            'top': 112.53133535696259,
+            'top_spacing': 27.75,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 295.95969063018333
+        }
+    ),
+    (
+        {
+            'font': 32.0,
+            'font_name': 20,
+            'font_size': 12.0,
+            'overall': 132.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 265.5313343699812,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 17093.53133444739,
+            'fontname': 'QEIAAA+VerdanaBold',
+            'page_number': 21,
+            'size': 11.999999922589723,
+            'text': 'RecordTV’s claim against MediaCorp under s 200(1) of the Copyright Act',
+            'top': 253.5313344473915,
+            'top_spacing': 113.25,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 433.8216897408556
+        }
+    ),
+    (
+        {
+            'font': 32.0,
+            'font_name': 20,
+            'font_size': 12.0,
+            'overall': 132.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 700.531331563859,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 17528.53133164127,
+            'fontname': 'QEIAAA+VerdanaBold',
+            'page_number': 21,
+            'size': 11.999999922589723,
+            'text': 'Conclusion',
+            'top': 688.5313316412693,
+            'top_spacing': 84.75,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 101.07969188732591
+        }
+    ),
+    (
+        {
+            'font': 32.0,
+            'font_name': 20,
+            'font_size': 12.0,
+            'overall': 132.0,
+            'word_length': 100
+        },
+        {
+            'bottom': 96.03129495509472,
+            'bottom_spacing': 27.75,
+            'direction': 1,
+            'doctop': 17766.031295032506,
+            'fontname': 'QEIAAA+VerdanaBold',
+            'page_number': 22,
+            'size': 11.999999922589723,
+            'text': 'Observations',
+            'top': 84.031295032505,
+            'top_spacing': 27.75,
+            'upright': True,
+            'x0': 41.60769227097115,
+            'x1': 114.16569180291002
+        }
+    )
+]
+
+snapshots['test_score_words[./pdf/UQP v UQQ [2019] SGHCF 7 - Judgment.pdf] 1'] = [
     (
         {
             'font': 24.48,

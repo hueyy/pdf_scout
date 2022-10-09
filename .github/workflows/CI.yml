@@ -1,0 +1,27 @@
+name: build & test
+on:
+  - push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          lfs: true
+      
+      - name: Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+        
+      - name: Poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: '1.1.7'
+      
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Static type checking
+        run: poetry run mypy pdf_scout/app.py

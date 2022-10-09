@@ -63,3 +63,9 @@ There are snapshot tests. Input PDFs are not provided at the moment, so you will
 poetry run pytest
 poetry run pytest --snapshot-update
 ```
+
+### Static type-checking
+
+```bash
+poetry run mypy pdf_scout/app.py
+```

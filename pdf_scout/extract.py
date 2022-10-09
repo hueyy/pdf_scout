@@ -107,7 +107,7 @@ def raw_extract_words(pdf_file: pdfplumber.PDF) -> List[RawWord]:
     return all_words
 
 
-def extract_all_words(pdf_file: pdfplumber.PDF) -> List[Word]:
+def extract_all_words(pdf_file: pdfplumber.PDF) -> Tuple[List[Word], List[Word]]:
     """
     Returns a list of dicts something like
     {
@@ -137,7 +137,7 @@ def extract_all_words(pdf_file: pdfplumber.PDF) -> List[Word]:
     # TODO: handle center-aligned text
     left_margins = guess_left_margin(all_words_with_line_spacing)
 
-    non_body_words = [
+    non_body_words_with_line_spacing = [
         word
         for word in all_words_with_line_spacing
         if (
@@ -155,4 +155,4 @@ def extract_all_words(pdf_file: pdfplumber.PDF) -> List[Word]:
 
     debug_log("extract_all_words locals: ", locals())
 
-    return all_words_with_line_spacing, non_body_words
+    return all_words_with_line_spacing, non_body_words_with_line_spacing

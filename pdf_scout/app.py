@@ -16,12 +16,12 @@ class Bookmark(TypedDict):
 
 
 def write_bookmarks(
-    input_path: str, output_path: str, bookmarks: List[Bookmark]
+    input_path: str, output_path: str, bookmarks: List[Tuple[int, Bookmark]]
 ) -> None:
     merger = PdfMerger()
     merger.append(input_path, import_outline=False)  # disregard existing outline
 
-    parent_bookmarks: List[Tuple(int, Any)] = []
+    parent_bookmarks: List[Tuple[int, Any]] = []
     # last item in list is last outline item added
 
     add_bookmark_to_writer = lambda writer, bookmark, parent: writer.add_outline_item(
@@ -129,4 +129,5 @@ def start():
 
 
 if __name__ == "__main__":
-    start()
+    main("./pdf/PDPA Key Concepts.pdf", "")
+    # start()

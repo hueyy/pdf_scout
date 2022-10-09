@@ -4,33 +4,9 @@ from operator import itemgetter
 from typing import List, Tuple
 from pdf_scout.logger import debug_log
 from pdf_scout.types import RawWord, Word, DocumentWords, Rect
+from pdf_scout.utils import guess_left_margin
 import statistics
 import pdfplumber
-
-
-def guess_left_margin(words) -> List[Number]:
-    words_x0 = [round(word["x0"]) for word in words]
-    counts = [(x0, words_x0.count(x0)) for x0 in set(words_x0)]
-    std_dev = statistics.pstdev([count for _, count in counts])
-    mean = statistics.mean([count for _, count in counts])
-    threshold_counts = [
-        (left_margin, count)
-        for left_margin, count in counts
-        if count >= mean + std_dev * 5
-    ]
-
-    debug_log("guess_left_margin locals:", locals())
-
-    if len(threshold_counts) == 2:
-        # assume different left margin on odd and even pages
-        return [left_margin for left_margin, _ in threshold_counts]
-    else:
-        # assume uniform left margin
-        return (
-            [threshold_counts[0][0]]
-            if len(threshold_counts) == 1
-            else [max(counts, key=lambda x: x[1])[0]]
-        )
 
 
 def get_header_bottom_position(pdf_file: pdfplumber.PDF) -> Number:
@@ -161,7 +137,7 @@ def extract_all_words(pdf_file: pdfplumber.PDF) -> DocumentWords:
 
     # TODO: add some margin of appreciation to account for indented headers, footnotes, etc
     # TODO: handle center-aligned text
-    left_margins = guess_left_margin(all_words_with_line_spacing)
+    left_margins = guess_left_margin(pdf_file, all_words_with_line_spacing)
 
     non_body_words_with_line_spacing = [
         word

@@ -18,8 +18,8 @@ def test_guess_body_spacing(file_raw_output, snapshot):
 
 
 def test_guess_left_margin(file_raw_output, snapshot):
-    _, raw_extracted_words = file_raw_output
-    left_margin = guess_left_margin(raw_extracted_words)
+    file, raw_extracted_words = file_raw_output
+    left_margin = guess_left_margin(file, raw_extracted_words)
     snapshot.assert_match(left_margin)
 
 

@@ -164,43 +164,19 @@ snapshots['test_score_words[./pdf/PDPA Key Concepts.pdf] 1'] = [
             'word_length': 100
         },
         {
-            'bottom': 120.64999999999998,
-            'bottom_spacing': 31.17,
+            'bottom': 88.82999999999993,
+            'bottom_spacing': 31.82,
             'direction': 1,
-            'doctop': 5158.129999999999,
+            'doctop': 5126.3099999999995,
             'fontname': 'BCDFEE+Calibri-Bold',
             'page_number': 7,
             'size': 14.039999999999964,
-            'text': 'Introduction',
-            'top': 106.61000000000001,
-            'top_spacing': 31.82,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 190.63304
-        }
-    ),
-    (
-        {
-            'font': 34.04,
-            'font_name': 20,
-            'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
-        },
-        {
-            'bottom': 88.82999999999993,
-            'bottom_spacing': 31.31,
-            'direction': 1,
-            'doctop': 5968.23,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 8,
-            'size': 14.039999999999964,
-            'text': 'Overview of the PDPA',
+            'text': 'PART I: INTRODUCTION AND OVERVIEW',
             'top': 74.78999999999996,
             'top_spacing': 74.79,
             'upright': True,
-            'x0': 114.62,
-            'x1': 246.58303999999998
+            'x0': 72.024,
+            'x1': 308.74304
         }
     ),
     (
@@ -212,259 +188,19 @@ snapshots['test_score_words[./pdf/PDPA Key Concepts.pdf] 1'] = [
             'word_length': 100
         },
         {
-            'bottom': 120.64999999999998,
-            'bottom_spacing': 31.17,
+            'bottom': 88.94999999999993,
+            'bottom_spacing': 31.7,
             'direction': 1,
-            'doctop': 7683.889999999999,
+            'doctop': 7652.19,
             'fontname': 'BCDFEE+Calibri-Bold',
             'page_number': 10,
             'size': 14.039999999999964,
-            'text': 'Definitions and related matters',
-            'top': 106.61000000000001,
-            'top_spacing': 31.7,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 300.34304000000003
-        }
-    ),
-    (
-        {
-            'font': 34.04,
-            'font_name': 20,
-            'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
-        },
-        {
-            'bottom': 88.82999999999993,
-            'bottom_spacing': 31.31,
-            'direction': 1,
-            'doctop': 8493.989999999998,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 11,
-            'size': 14.039999999999964,
-            'text': 'Individuals',
-            'top': 74.78999999999996,
-            'top_spacing': 74.79,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 181.03304
-        }
-    ),
-    (
-        {
-            'font': 34.04,
-            'font_name': 20,
-            'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
-        },
-        {
-            'bottom': 88.82999999999993,
-            'bottom_spacing': 31.31,
-            'direction': 1,
-            'doctop': 9335.91,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 12,
-            'size': 14.039999999999964,
-            'text': 'Personal data',
-            'top': 74.78999999999996,
-            'top_spacing': 74.79,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 200.74303999999998
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 312.65,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 10403.689999999999,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 13,
-            'size': 12.0,
-            'text': 'Number of data elements in the dataset and availability of other information',
-            'top': 300.65,
-            'top_spacing': 28.92,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 487.45400000000006
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 634.99,
-            'bottom_spacing': 28.83,
-            'direction': 1,
-            'doctop': 10726.029999999999,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 13,
-            'size': 12.0,
-            'text': 'Nature of data',
-            'top': 622.99,
-            'top_spacing': 28.8,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 189.09199999999998
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 165.86,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 11098.82,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 14,
-            'size': 12.0,
-            'text': 'Purpose of the dataset or document',
-            'top': 153.86,
-            'top_spacing': 28.92,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 291.812
-        }
-    ),
-    (
-        {
-            'font': 34.04,
-            'font_name': 20,
-            'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
-        },
-        {
-            'bottom': 88.82999999999993,
-            'bottom_spacing': 31.31,
-            'direction': 1,
-            'doctop': 17755.109999999997,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 22,
-            'size': 14.039999999999964,
-            'text': 'Organisations',
-            'top': 74.78999999999996,
-            'top_spacing': 74.79,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 198.19304
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 233.17999999999995,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 21269.17999999999,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 26,
-            'size': 12.0,
-            'text': 'Overseas transfers of personal data',
-            'top': 221.17999999999995,
-            'top_spacing': 28.8,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 292.80199999999996
-        }
-    ),
-    (
-        {
-            'font': 34.04,
-            'font_name': 20,
-            'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
-        },
-        {
-            'bottom': 88.82999999999993,
-            'bottom_spacing': 31.31,
-            'direction': 1,
-            'doctop': 25332.38999999998,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 31,
-            'size': 14.039999999999964,
-            'text': 'Collection, Use and Disclosure',
-            'top': 74.78999999999996,
-            'top_spacing': 74.79,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 292.42304
-        }
-    ),
-    (
-        {
-            'font': 34.04,
-            'font_name': 20,
-            'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
-        },
-        {
-            'bottom': 88.82999999999993,
-            'bottom_spacing': 31.31,
-            'direction': 1,
-            'doctop': 26174.30999999998,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 32,
-            'size': 14.039999999999964,
-            'text': 'Purposes',
-            'top': 74.78999999999996,
-            'top_spacing': 74.79,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 170.95304
-        }
-    ),
-    (
-        {
-            'font': 34.04,
-            'font_name': 20,
-            'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
-        },
-        {
-            'bottom': 88.94999999999993,
-            'bottom_spacing': 31.19,
-            'direction': 1,
-            'doctop': 27016.349999999977,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 33,
-            'size': 14.039999999999964,
-            'text': 'Reasonableness',
+            'text': 'PART II: IMPORTANT TERMS USED IN THE PDPA',
             'top': 74.90999999999997,
             'top_spacing': 74.91,
             'upright': True,
-            'x0': 114.62,
-            'x1': 210.94304
+            'x0': 72.024,
+            'x1': 351.48304
         }
     ),
     (
@@ -476,43 +212,19 @@ snapshots['test_score_words[./pdf/PDPA Key Concepts.pdf] 1'] = [
             'word_length': 100
         },
         {
-            'bottom': 120.64999999999998,
-            'bottom_spacing': 31.17,
+            'bottom': 88.82999999999993,
+            'bottom_spacing': 31.82,
             'direction': 1,
-            'doctop': 27889.969999999976,
+            'doctop': 27858.149999999976,
             'fontname': 'BCDFEE+Calibri-Bold',
             'page_number': 34,
             'size': 14.039999999999964,
-            'text': 'Overview of the Data Protection Provisions',
-            'top': 106.61000000000001,
-            'top_spacing': 31.82,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 372.12304
-        }
-    ),
-    (
-        {
-            'font': 34.04,
-            'font_name': 20,
-            'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
-        },
-        {
-            'bottom': 88.82999999999993,
-            'bottom_spacing': 31.31,
-            'direction': 1,
-            'doctop': 29541.989999999972,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 36,
-            'size': 14.039999999999964,
-            'text': 'Applicability to Inbound Data Transfers',
+            'text': 'PART III: THE DATA PROTECTION PROVISIONS',
             'top': 74.78999999999996,
             'top_spacing': 74.79,
             'upright': True,
-            'x0': 114.62,
-            'x1': 345.60304
+            'x0': 72.024,
+            'x1': 343.08304000000004
         }
     ),
     (
@@ -520,416 +232,8 @@ snapshots['test_score_words[./pdf/PDPA Key Concepts.pdf] 1'] = [
             'font': 34.04,
             'font_name': 20,
             'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
-        },
-        {
-            'bottom': 88.94999999999993,
-            'bottom_spacing': 31.19,
-            'direction': 1,
-            'doctop': 31225.949999999968,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 38,
-            'size': 14.039999999999964,
-            'text': 'The Consent Obligation',
-            'top': 74.90999999999997,
-            'top_spacing': 74.91,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 253.78304
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 680.02,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 35186.73999999996,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 42,
-            'size': 12.0,
-            'text': 'Deemed consent by conduct',
-            'top': 668.02,
-            'top_spacing': 28.95,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 251.00000000000006
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 86.39999999999998,
-            'bottom_spacing': 28.82,
-            'direction': 1,
-            'doctop': 36276.95999999996,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 44,
-            'size': 12.0,
-            'text': 'Deemed consent by contractual necessity',
-            'top': 74.39999999999998,
-            'top_spacing': 74.4,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 317.762
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 682.42,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 37714.89999999996,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 45,
-            'size': 12.0,
-            'text': 'Deemed consent by notification',
-            'top': 670.42,
-            'top_spacing': 40.95,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 270.962
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 86.39999999999998,
-            'bottom_spacing': 28.82,
-            'direction': 1,
-            'doctop': 42170.39999999995,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 51,
-            'size': 12.0,
-            'text': 'Consent for sending of directing marketing messages',
-            'top': 74.39999999999998,
-            'top_spacing': 74.4,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 377.542
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 86.39999999999998,
-            'bottom_spacing': 28.82,
-            'direction': 1,
-            'doctop': 48063.83999999994,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 58,
-            'size': 12.0,
-            'text': 'Where a withdrawal notice for marketing is kept general',
-            'top': 74.39999999999998,
-            'top_spacing': 74.4,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 395.42199999999997
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 555.91,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 50217.18999999994,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 60,
-            'size': 12.0,
-            'text': 'Legitimate interests exception',
-            'top': 543.91,
-            'top_spacing': 28.92,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 260.636
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 719.26,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 51222.459999999934,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 61,
-            'size': 12.0,
-            'text': 'Identify and articulate the legitimate interests',
-            'top': 707.26,
-            'top_spacing': 28.8,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 343.342
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 543.67,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 51888.78999999993,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 62,
-            'size': 12.0,
-            'text': 'Disclose reliance on legitimate interests exception',
-            'top': 531.67,
-            'top_spacing': 28.92,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 361.942
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 249.9799999999999,
-            'bottom_spacing': 28.92,
-            'direction': 1,
-            'doctop': 52437.01999999993,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 63,
-            'size': 12.0,
-            'text': 'Justify reliance on legitimate interests upon the Commission',
-            'top': 237.9799999999999,
-            'top_spacing': 28.8,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 405.358
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 476.22999999999996,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 52663.26999999993,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 63,
-            'size': 12.0,
-            'text': 'Examples of legitimate interests',
-            'top': 464.22999999999996,
-            'top_spacing': 28.82,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 272.882
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 194.65999999999997,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 57433.21999999992,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 69,
-            'size': 12.0,
-            'text': 'Business improvement exception',
-            'top': 182.65999999999997,
-            'top_spacing': 28.8,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 276.24199999999996
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 635.9499999999999,
-            'bottom_spacing': 28.95,
-            'direction': 1,
-            'doctop': 61242.18999999991,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 73,
-            'size': 12.0,
-            'text': 'Sending of direct marketing messages and preparatory activities to marketing',
-            'top': 623.9499999999999,
-            'top_spacing': 40.8,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 495.772
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 132.14,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 61580.29999999991,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 74,
-            'size': 12.0,
-            'text': 'Research exception for the use and disclosure of personal data without consent',
-            'top': 120.13999999999999,
-            'top_spacing': 28.92,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 501.532
-        }
-    ),
-    (
-        {
-            'font': 34.04,
-            'font_name': 20,
-            'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
-        },
-        {
-            'bottom': 88.94999999999993,
-            'bottom_spacing': 31.19,
-            'direction': 1,
-            'doctop': 66586.58999999991,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 80,
-            'size': 14.039999999999964,
-            'text': 'The Purpose Limitation Obligation',
-            'top': 74.90999999999997,
-            'top_spacing': 74.91,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 316.42304
-        }
-    ),
-    (
-        {
-            'font': 34.04,
-            'font_name': 20,
-            'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
-        },
-        {
-            'bottom': 88.94999999999993,
-            'bottom_spacing': 31.19,
-            'direction': 1,
-            'doctop': 68270.4299999999,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 82,
-            'size': 14.039999999999964,
-            'text': 'The Notification Obligation',
-            'top': 74.90999999999997,
-            'top_spacing': 74.91,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 278.62304
-        }
-    ),
-    (
-        {
-            'font': 34.04,
-            'font_name': 20,
-            'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
-        },
-        {
-            'bottom': 88.94999999999993,
-            'bottom_spacing': 31.19,
-            'direction': 1,
-            'doctop': 75005.78999999989,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 90,
-            'size': 14.039999999999964,
-            'text': 'The Access and Correction Obligations',
-            'top': 74.90999999999997,
-            'top_spacing': 74.91,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 339.84304000000003
-        }
-    ),
-    (
-        {
-            'font': 34.04,
-            'font_name': 20,
-            'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
+            'overall': 84.04,
+            'word_length': 50.0
         },
         {
             'bottom': 88.82999999999993,
@@ -939,12 +243,12 @@ snapshots['test_score_words[./pdf/PDPA Key Concepts.pdf] 1'] = [
             'fontname': 'BCDFEE+Calibri-Bold',
             'page_number': 109,
             'size': 14.039999999999964,
-            'text': 'The Accuracy Obligation',
+            'text': '16',
             'top': 74.78999999999996,
             'top_spacing': 74.79,
             'upright': True,
-            'x0': 114.62,
-            'x1': 258.46304
+            'x0': 72.024,
+            'x1': 86.22226
         }
     ),
     (
@@ -952,8 +256,8 @@ snapshots['test_score_words[./pdf/PDPA Key Concepts.pdf] 1'] = [
             'font': 34.04,
             'font_name': 20,
             'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
+            'overall': 84.04,
+            'word_length': 50.0
         },
         {
             'bottom': 88.82999999999993,
@@ -963,12 +267,12 @@ snapshots['test_score_words[./pdf/PDPA Key Concepts.pdf] 1'] = [
             'fontname': 'BCDFEE+Calibri-Bold',
             'page_number': 113,
             'size': 14.039999999999964,
-            'text': 'The Protection Obligation',
+            'text': '17',
             'top': 74.78999999999996,
             'top_spacing': 74.79,
             'upright': True,
-            'x0': 114.62,
-            'x1': 267.46304000000003
+            'x0': 72.024,
+            'x1': 86.22226
         }
     ),
     (
@@ -976,8 +280,8 @@ snapshots['test_score_words[./pdf/PDPA Key Concepts.pdf] 1'] = [
             'font': 34.04,
             'font_name': 20,
             'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
+            'overall': 84.04,
+            'word_length': 50.0
         },
         {
             'bottom': 88.94999999999993,
@@ -987,12 +291,12 @@ snapshots['test_score_words[./pdf/PDPA Key Concepts.pdf] 1'] = [
             'fontname': 'BCDFEE+Calibri-Bold',
             'page_number': 116,
             'size': 14.039999999999964,
-            'text': 'The Retention Limitation Obligation',
+            'text': '18',
             'top': 74.90999999999997,
             'top_spacing': 74.91,
             'upright': True,
-            'x0': 114.62,
-            'x1': 326.50304
+            'x0': 72.024,
+            'x1': 86.22226
         }
     ),
     (
@@ -1000,8 +304,8 @@ snapshots['test_score_words[./pdf/PDPA Key Concepts.pdf] 1'] = [
             'font': 34.04,
             'font_name': 20,
             'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
+            'overall': 84.04,
+            'word_length': 50.0
         },
         {
             'bottom': 88.94999999999993,
@@ -1011,12 +315,12 @@ snapshots['test_score_words[./pdf/PDPA Key Concepts.pdf] 1'] = [
             'fontname': 'BCDFEE+Calibri-Bold',
             'page_number': 121,
             'size': 14.039999999999964,
-            'text': 'The Transfer Limitation Obligation',
+            'text': '19',
             'top': 74.90999999999997,
             'top_spacing': 74.91,
             'upright': True,
-            'x0': 114.62,
-            'x1': 317.18912
+            'x0': 72.024,
+            'x1': 86.22226
         }
     ),
     (
@@ -1024,8 +328,8 @@ snapshots['test_score_words[./pdf/PDPA Key Concepts.pdf] 1'] = [
             'font': 34.04,
             'font_name': 20,
             'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
+            'overall': 84.04,
+            'word_length': 50.0
         },
         {
             'bottom': 88.82999999999993,
@@ -1035,636 +339,12 @@ snapshots['test_score_words[./pdf/PDPA Key Concepts.pdf] 1'] = [
             'fontname': 'BCDFEE+Calibri-Bold',
             'page_number': 129,
             'size': 14.039999999999964,
-            'text': 'The Data Breach Notification Obligation',
+            'text': '20',
             'top': 74.78999999999996,
             'top_spacing': 74.79,
             'upright': True,
-            'x0': 114.62,
-            'x1': 349.40647999999993
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 628.15,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 108381.90999999981,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 129,
-            'size': 12.0,
-            'text': 'Data breaches within an organisation',
-            'top': 616.15,
-            'top_spacing': 28.92,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 299.882
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 374.44999999999993,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 108970.12999999982,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 130,
-            'size': 12.0,
-            'text': 'Data breaches discovered by a data intermediary',
-            'top': 362.44999999999993,
-            'top_spacing': 55.56,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 355.822
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 115.21999999999991,
-            'bottom_spacing': 28.92,
-            'direction': 1,
-            'doctop': 109552.81999999982,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 131,
-            'size': 12.0,
-            'text': 'Data breaches involving more than one organisation',
-            'top': 103.21999999999991,
-            'top_spacing': 28.82,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 372.382
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 314.3299999999999,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 110593.84999999982,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 132,
-            'size': 12.0,
-            'text': 'Significant harm to affected individuals',
-            'top': 302.3299999999999,
-            'top_spacing': 28.92,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 307.442
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 86.39999999999998,
-            'bottom_spacing': 28.82,
-            'direction': 1,
-            'doctop': 111207.83999999981,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 133,
-            'size': 12.0,
-            'text': 'Financial information which is not publicly disclosed',
-            'top': 74.39999999999998,
-            'top_spacing': 74.4,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 368.30199999999996
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 524.23,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 114171.4299999998,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 136,
-            'size': 12.0,
-            'text': 'Life, accident and health insurance information which is not publicly disclosed',
-            'top': 512.23,
-            'top_spacing': 28.8,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 493.49199999999996
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 211.45999999999992,
-            'bottom_spacing': 28.92,
-            'direction': 1,
-            'doctop': 114700.57999999981,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 137,
-            'size': 12.0,
-            'text': 'Specified medical information',
-            'top': 199.45999999999992,
-            'top_spacing': 28.8,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 261.962
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 252.38,
-            'bottom_spacing': 28.83,
-            'direction': 1,
-            'doctop': 115583.41999999981,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 138,
-            'size': 12.0,
-            'text': 'Information related to adoption matters',
-            'top': 240.38,
-            'top_spacing': 28.92,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 312.962
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 601.03,
-            'bottom_spacing': 28.92,
-            'direction': 1,
-            'doctop': 115932.0699999998,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 138,
-            'size': 12.0,
-            'text': 'Private key used to authenticate or sign an electronic record or transaction',
-            'top': 589.03,
-            'top_spacing': 28.8,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 479.932
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 666.6999999999999,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 117681.5799999998,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 140,
-            'size': 12.0,
-            'text': 'Significant scale of breach',
-            'top': 654.6999999999999,
-            'top_spacing': 40.95,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 241.17200000000008
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 182.65999999999997,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 119723.2999999998,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 143,
-            'size': 12.0,
-            'text': 'Remedial action',
-            'top': 170.65999999999997,
-            'top_spacing': 28.8,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 195.536
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 86.39999999999998,
-            'bottom_spacing': 28.82,
-            'direction': 1,
-            'doctop': 120468.95999999979,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 144,
-            'size': 12.0,
-            'text': 'Technological protection',
-            'top': 74.39999999999998,
-            'top_spacing': 74.4,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 237.11600000000004
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 115.21999999999991,
-            'bottom_spacing': 28.92,
-            'direction': 1,
-            'doctop': 123023.53999999979,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 147,
-            'size': 12.0,
-            'text': 'Notification to the Commission',
-            'top': 103.21999999999991,
-            'top_spacing': 28.82,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 267.602
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 426.28999999999996,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 124176.52999999978,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 148,
-            'size': 12.0,
-            'text': 'Notification to affected individuals',
-            'top': 414.28999999999996,
-            'top_spacing': 28.92,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 287.762
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 676.42,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 124426.65999999979,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 148,
-            'size': 12.0,
-            'text': 'Facts of the data breach',
-            'top': 664.42,
-            'top_spacing': 28.83,
-            'upright': True,
-            'x0': 157.1,
-            'x1': 279.602
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 127.69999999999993,
-            'bottom_spacing': 28.92,
-            'direction': 1,
-            'doctop': 124719.85999999978,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 149,
-            'size': 12.0,
-            'text': 'Data breach management and remediation plan',
-            'top': 115.69999999999993,
-            'top_spacing': 41.3,
-            'upright': True,
-            'x0': 157.1,
-            'x1': 399.262
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 358.96999999999997,
-            'bottom_spacing': 28.92,
-            'direction': 1,
-            'doctop': 124951.12999999979,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 149,
-            'size': 12.0,
-            'text': 'Contact details',
-            'top': 346.96999999999997,
-            'top_spacing': 26.64,
-            'upright': True,
-            'x0': 157.1,
-            'x1': 234.362
-        }
-    ),
-    (
-        {
-            'font': 17.0,
-            'font_name': 5,
-            'font_size': 12.0,
-            'overall': 117.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 600.91,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 125193.06999999979,
-            'fontname': 'BCDHEE+Calibri-Italic',
-            'page_number': 149,
-            'size': 12.0,
-            'text': 'Notification to other regulators',
-            'top': 588.91,
-            'top_spacing': 28.92,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 266.32400000000007
-        }
-    ),
-    (
-        {
-            'font': 34.04,
-            'font_name': 20,
-            'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
-        },
-        {
-            'bottom': 140.32999999999993,
-            'bottom_spacing': 31.05,
-            'direction': 1,
-            'doctop': 129781.96999999977,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 155,
-            'size': 14.039999999999964,
-            'text': 'Overview',
-            'top': 126.28999999999996,
-            'top_spacing': 31.68,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 176.59303999999997
-        }
-    ),
-    (
-        {
-            'font': 34.04,
-            'font_name': 20,
-            'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
-        },
-        {
-            'bottom': 88.82999999999993,
-            'bottom_spacing': 31.31,
-            'direction': 1,
-            'doctop': 130572.38999999977,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 156,
-            'size': 14.039999999999964,
-            'text': 'Offences for egregious mishandling of personal data',
-            'top': 74.78999999999996,
-            'top_spacing': 74.79,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 421.08304000000004
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 199.45999999999992,
-            'bottom_spacing': 28.92,
-            'direction': 1,
-            'doctop': 131526.97999999978,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 157,
-            'size': 12.0,
-            'text': 'Where the conduct is permitted or required under other laws',
-            'top': 187.45999999999992,
-            'top_spacing': 28.8,
-            'upright': True,
-            'x0': 157.1,
-            'x1': 462.98199999999997
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 228.38,
-            'bottom_spacing': 28.8,
-            'direction': 1,
-            'doctop': 131555.8999999998,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 157,
-            'size': 12.0,
-            'text': 'Where the conduct is authorised or required by an order of the court',
-            'top': 216.38,
-            'top_spacing': 28.92,
-            'upright': True,
-            'x0': 157.1,
-            'x1': 499.01599999999974
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 704.74,
-            'bottom_spacing': 41.82,
-            'direction': 1,
-            'doctop': 132032.25999999978,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 157,
-            'size': 12.0,
-            'text': 'Testing the integrity and confidentiality of anonymised information in the',
-            'top': 692.74,
-            'top_spacing': 28.92,
-            'upright': True,
-            'x0': 157.1,
-            'x1': 525.9019999999998
-        }
-    ),
-    (
-        {
-            'font': 32.0,
-            'font_name': 20,
-            'font_size': 12.0,
-            'overall': 132.0,
-            'word_length': 100
-        },
-        {
-            'bottom': 86.39999999999998,
-            'bottom_spacing': 28.82,
-            'direction': 1,
-            'doctop': 132255.8399999998,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 158,
-            'size': 12.0,
-            'text': 'possession or under the control of an organisation',
-            'top': 74.39999999999998,
-            'top_spacing': 74.4,
-            'upright': True,
-            'x0': 157.1,
-            'x1': 407.59999999999985
-        }
-    ),
-    (
-        {
-            'font': 34.04,
-            'font_name': 20,
-            'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
-        },
-        {
-            'bottom': 120.64999999999998,
-            'bottom_spacing': 31.17,
-            'direction': 1,
-            'doctop': 133129.9699999998,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 159,
-            'size': 14.039999999999964,
-            'text': 'Overview',
-            'top': 106.61000000000001,
-            'top_spacing': 31.82,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 176.59303999999997
-        }
-    ),
-    (
-        {
-            'font': 34.04,
-            'font_name': 20,
-            'font_size': 14.04,
-            'overall': 134.04,
-            'word_length': 100
-        },
-        {
-            'bottom': 88.82999999999993,
-            'bottom_spacing': 31.31,
-            'direction': 1,
-            'doctop': 133940.06999999983,
-            'fontname': 'BCDFEE+Calibri-Bold',
-            'page_number': 160,
-            'size': 14.039999999999964,
-            'text': 'Rights and obligations, etc. under other laws',
-            'top': 74.78999999999996,
-            'top_spacing': 74.79,
-            'upright': True,
-            'x0': 114.62,
-            'x1': 377.04304
+            'x0': 72.024,
+            'x1': 86.22226
         }
     ),
     (
@@ -1677,18 +357,186 @@ snapshots['test_score_words[./pdf/PDPA Key Concepts.pdf] 1'] = [
         },
         {
             'bottom': 88.94999999999993,
+            'bottom_spacing': 19.7,
+            'direction': 1,
+            'doctop': 129730.58999999978,
+            'fontname': 'BCDFEE+Calibri-Bold',
+            'page_number': 155,
+            'size': 14.039999999999964,
+            'text': 'PART',
+            'top': 74.90999999999997,
+            'top_spacing': 74.91,
+            'upright': True,
+            'x0': 72.024,
+            'x1': 106.02888
+        }
+    ),
+    (
+        {
+            'font': 34.04,
+            'font_name': 20,
+            'font_size': 14.04,
+            'overall': 134.04,
+            'word_length': 100
+        },
+        {
+            'bottom': 108.64999999999998,
+            'bottom_spacing': 31.68,
+            'direction': 1,
+            'doctop': 129750.28999999978,
+            'fontname': 'BCDFEE+Calibri-Bold',
+            'page_number': 155,
+            'size': 14.039999999999964,
+            'text': 'INFORMATION',
+            'top': 94.61000000000001,
+            'top_spacing': 19.7,
+            'upright': True,
+            'x0': 72.024,
+            'x1': 161.95304
+        }
+    ),
+    (
+        {
+            'font': 34.04,
+            'font_name': 20,
+            'font_size': 14.04,
+            'overall': 84.04,
+            'word_length': 50.0
+        },
+        {
+            'bottom': 140.32999999999993,
+            'bottom_spacing': 31.05,
+            'direction': 1,
+            'doctop': 129781.96999999977,
+            'fontname': 'BCDFEE+Calibri-Bold',
+            'page_number': 155,
+            'size': 14.039999999999964,
+            'text': '22',
+            'top': 126.28999999999996,
+            'top_spacing': 31.68,
+            'upright': True,
+            'x0': 72.024,
+            'x1': 86.22226
+        }
+    ),
+    (
+        {
+            'font': 34.04,
+            'font_name': 20,
+            'font_size': 14.04,
+            'overall': 84.04,
+            'word_length': 50.0
+        },
+        {
+            'bottom': 88.82999999999993,
+            'bottom_spacing': 31.31,
+            'direction': 1,
+            'doctop': 130572.38999999977,
+            'fontname': 'BCDFEE+Calibri-Bold',
+            'page_number': 156,
+            'size': 14.039999999999964,
+            'text': '23',
+            'top': 74.78999999999996,
+            'top_spacing': 74.79,
+            'upright': True,
+            'x0': 72.024,
+            'x1': 86.22226
+        }
+    ),
+    (
+        {
+            'font': 34.04,
+            'font_name': 20,
+            'font_size': 14.04,
+            'overall': 134.04,
+            'word_length': 100
+        },
+        {
+            'bottom': 88.82999999999993,
+            'bottom_spacing': 31.82,
+            'direction': 1,
+            'doctop': 133098.14999999982,
+            'fontname': 'BCDFEE+Calibri-Bold',
+            'page_number': 159,
+            'size': 14.039999999999964,
+            'text': 'PART V: OTHER RIGHTS, OBLIGATIONS AND USES',
+            'top': 74.78999999999996,
+            'top_spacing': 74.79,
+            'upright': True,
+            'x0': 72.024,
+            'x1': 359.64304000000004
+        }
+    ),
+    (
+        {
+            'font': 34.04,
+            'font_name': 20,
+            'font_size': 14.04,
+            'overall': 84.04,
+            'word_length': 50.0
+        },
+        {
+            'bottom': 120.64999999999998,
+            'bottom_spacing': 31.17,
+            'direction': 1,
+            'doctop': 133129.9699999998,
+            'fontname': 'BCDFEE+Calibri-Bold',
+            'page_number': 159,
+            'size': 14.039999999999964,
+            'text': '24',
+            'top': 106.61000000000001,
+            'top_spacing': 31.82,
+            'upright': True,
+            'x0': 72.024,
+            'x1': 86.22226
+        }
+    ),
+    (
+        {
+            'font': 34.04,
+            'font_name': 20,
+            'font_size': 14.04,
+            'overall': 84.04,
+            'word_length': 50.0
+        },
+        {
+            'bottom': 88.82999999999993,
+            'bottom_spacing': 31.31,
+            'direction': 1,
+            'doctop': 133940.06999999983,
+            'fontname': 'BCDFEE+Calibri-Bold',
+            'page_number': 160,
+            'size': 14.039999999999964,
+            'text': '25',
+            'top': 74.78999999999996,
+            'top_spacing': 74.79,
+            'upright': True,
+            'x0': 72.024,
+            'x1': 86.22226
+        }
+    ),
+    (
+        {
+            'font': 34.04,
+            'font_name': 20,
+            'font_size': 14.04,
+            'overall': 84.04,
+            'word_length': 50.0
+        },
+        {
+            'bottom': 88.94999999999993,
             'bottom_spacing': 31.19,
             'direction': 1,
             'doctop': 135624.02999999985,
             'fontname': 'BCDFEE+Calibri-Bold',
             'page_number': 162,
             'size': 14.039999999999964,
-            'text': 'Use of personal data collected before 1 July 2014',
+            'text': '26',
             'top': 74.90999999999997,
             'top_spacing': 74.91,
             'upright': True,
-            'x0': 114.62,
-            'x1': 405.60304
+            'x0': 72.024,
+            'x1': 86.22226
         }
     )
 ]

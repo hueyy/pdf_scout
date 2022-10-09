@@ -30,3 +30,6 @@ pdf_scout = "pdf_scout.app:start"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[mypy]
+ignore_missing_imports = true

@@ -63,512 +63,128 @@ snapshots['test_generate_bookmarks[./pdf/PDPA Key Concepts.pdf] 1'] = [
         0,
         {
             'page_number': 7,
-            'scroll_distance': 749.3499999999999,
-            'title': 'Introduction'
-        }
-    ),
-    (
-        0,
-        {
-            'page_number': 8,
             'scroll_distance': 781.17,
-            'title': 'Overview of the PDPA'
+            'title': 'PART I: INTRODUCTION AND OVERVIEW'
         }
     ),
     (
         0,
         {
             'page_number': 10,
-            'scroll_distance': 749.3499999999999,
-            'title': 'Definitions and related matters'
-        }
-    ),
-    (
-        0,
-        {
-            'page_number': 11,
-            'scroll_distance': 781.17,
-            'title': 'Individuals'
-        }
-    ),
-    (
-        0,
-        {
-            'page_number': 12,
-            'scroll_distance': 781.17,
-            'title': 'Personal data'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 13,
-            'scroll_distance': 553.27,
-            'title': 'Number of data elements in the dataset and availability of other information'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 13,
-            'scroll_distance': 230.92999999999995,
-            'title': 'Nature of data'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 14,
-            'scroll_distance': 700.06,
-            'title': 'Purpose of the dataset or document'
-        }
-    ),
-    (
-        0,
-        {
-            'page_number': 22,
-            'scroll_distance': 781.17,
-            'title': 'Organisations'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 26,
-            'scroll_distance': 632.74,
-            'title': 'Overseas transfers of personal data'
-        }
-    ),
-    (
-        0,
-        {
-            'page_number': 31,
-            'scroll_distance': 781.17,
-            'title': 'Collection, Use and Disclosure'
-        }
-    ),
-    (
-        0,
-        {
-            'page_number': 32,
-            'scroll_distance': 781.17,
-            'title': 'Purposes'
-        }
-    ),
-    (
-        0,
-        {
-            'page_number': 33,
             'scroll_distance': 781.05,
-            'title': 'Reasonableness'
+            'title': 'PART II: IMPORTANT TERMS USED IN THE PDPA'
         }
     ),
     (
         0,
         {
             'page_number': 34,
-            'scroll_distance': 749.3499999999999,
-            'title': 'Overview of the Data Protection Provisions'
-        }
-    ),
-    (
-        0,
-        {
-            'page_number': 36,
             'scroll_distance': 781.17,
-            'title': 'Applicability to Inbound Data Transfers'
+            'title': 'PART III: THE DATA PROTECTION PROVISIONS'
         }
     ),
     (
-        0,
-        {
-            'page_number': 38,
-            'scroll_distance': 781.05,
-            'title': 'The Consent Obligation'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 42,
-            'scroll_distance': 185.89999999999998,
-            'title': 'Deemed consent by conduct'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 44,
-            'scroll_distance': 779.52,
-            'title': 'Deemed consent by contractual necessity'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 45,
-            'scroll_distance': 183.5,
-            'title': 'Deemed consent by notification'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 51,
-            'scroll_distance': 779.52,
-            'title': 'Consent for sending of directing marketing messages'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 58,
-            'scroll_distance': 779.52,
-            'title': 'Where a withdrawal notice for marketing is kept general'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 60,
-            'scroll_distance': 310.01,
-            'title': 'Legitimate interests exception'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 61,
-            'scroll_distance': 146.65999999999997,
-            'title': 'Identify and articulate the legitimate interests'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 62,
-            'scroll_distance': 322.25,
-            'title': 'Disclose reliance on legitimate interests exception'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 63,
-            'scroll_distance': 615.94,
-            'title': 'Justify reliance on legitimate interests upon the Commission'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 63,
-            'scroll_distance': 389.69,
-            'title': 'Examples of legitimate interests'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 69,
-            'scroll_distance': 671.26,
-            'title': 'Business improvement exception'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 73,
-            'scroll_distance': 229.97000000000003,
-            'title': 'Sending of direct marketing messages and preparatory activities to marketing'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 74,
-            'scroll_distance': 733.78,
-            'title': 'Research exception for the use and disclosure of personal data without consent'
-        }
-    ),
-    (
-        0,
-        {
-            'page_number': 80,
-            'scroll_distance': 781.05,
-            'title': 'The Purpose Limitation Obligation'
-        }
-    ),
-    (
-        0,
-        {
-            'page_number': 82,
-            'scroll_distance': 781.05,
-            'title': 'The Notification Obligation'
-        }
-    ),
-    (
-        0,
-        {
-            'page_number': 90,
-            'scroll_distance': 781.05,
-            'title': 'The Access and Correction Obligations'
-        }
-    ),
-    (
-        0,
+        1,
         {
             'page_number': 109,
             'scroll_distance': 781.17,
-            'title': 'The Accuracy Obligation'
+            'title': '16'
         }
     ),
     (
-        0,
+        1,
         {
             'page_number': 113,
             'scroll_distance': 781.17,
-            'title': 'The Protection Obligation'
+            'title': '17'
         }
     ),
     (
-        0,
+        1,
         {
             'page_number': 116,
             'scroll_distance': 781.05,
-            'title': 'The Retention Limitation Obligation'
+            'title': '18'
         }
     ),
     (
-        0,
+        1,
         {
             'page_number': 121,
             'scroll_distance': 781.05,
-            'title': 'The Transfer Limitation Obligation'
+            'title': '19'
         }
     ),
     (
-        0,
+        1,
         {
             'page_number': 129,
             'scroll_distance': 781.17,
-            'title': 'The Data Breach Notification Obligation'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 129,
-            'scroll_distance': 237.76999999999998,
-            'title': 'Data breaches within an organisation'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 130,
-            'scroll_distance': 491.47,
-            'title': 'Data breaches discovered by a data intermediary'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 131,
-            'scroll_distance': 750.7,
-            'title': 'Data breaches involving more than one organisation'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 132,
-            'scroll_distance': 551.59,
-            'title': 'Significant harm to affected individuals'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 133,
-            'scroll_distance': 779.52,
-            'title': 'Financial information which is not publicly disclosed'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 136,
-            'scroll_distance': 341.68999999999994,
-            'title': 'Life, accident and health insurance information which is not publicly disclosed'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 137,
-            'scroll_distance': 654.46,
-            'title': 'Specified medical information'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 138,
-            'scroll_distance': 613.54,
-            'title': 'Information related to adoption matters'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 138,
-            'scroll_distance': 264.89,
-            'title': 'Private key used to authenticate or sign an electronic record or transaction'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 140,
-            'scroll_distance': 199.22000000000003,
-            'title': 'Significant scale of breach'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 143,
-            'scroll_distance': 683.26,
-            'title': 'Remedial action'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 144,
-            'scroll_distance': 779.52,
-            'title': 'Technological protection'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 147,
-            'scroll_distance': 750.7,
-            'title': 'Notification to the Commission'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 148,
-            'scroll_distance': 439.63,
-            'title': 'Notification to affected individuals'
-        }
-    ),
-    (
-        1,
-        {
-            'page_number': 148,
-            'scroll_distance': 189.5,
-            'title': 'Facts of the data breach'
-        }
-    ),
-    (
-        1,
-        {
-            'page_number': 149,
-            'scroll_distance': 738.22,
-            'title': 'Data breach management and remediation plan'
-        }
-    ),
-    (
-        1,
-        {
-            'page_number': 149,
-            'scroll_distance': 506.95,
-            'title': 'Contact details'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 149,
-            'scroll_distance': 265.01,
-            'title': 'Notification to other regulators'
+            'title': '20'
         }
     ),
     (
         0,
         {
             'page_number': 155,
-            'scroll_distance': 729.67,
-            'title': 'Overview'
+            'scroll_distance': 781.05,
+            'title': 'PART'
         }
     ),
     (
         0,
         {
+            'page_number': 155,
+            'scroll_distance': 761.3499999999999,
+            'title': 'INFORMATION'
+        }
+    ),
+    (
+        1,
+        {
+            'page_number': 155,
+            'scroll_distance': 729.67,
+            'title': '22'
+        }
+    ),
+    (
+        1,
+        {
             'page_number': 156,
             'scroll_distance': 781.17,
-            'title': 'Offences for egregious mishandling of personal data'
-        }
-    ),
-    (
-        1,
-        {
-            'page_number': 157,
-            'scroll_distance': 666.46,
-            'title': 'Where the conduct is permitted or required under other laws'
-        }
-    ),
-    (
-        1,
-        {
-            'page_number': 157,
-            'scroll_distance': 637.54,
-            'title': 'Where the conduct is authorised or required by an order of the court'
-        }
-    ),
-    (
-        1,
-        {
-            'page_number': 157,
-            'scroll_distance': 161.17999999999995,
-            'title': 'Testing the integrity and confidentiality of anonymised information in the'
-        }
-    ),
-    (
-        1,
-        {
-            'page_number': 158,
-            'scroll_distance': 779.52,
-            'title': 'possession or under the control of an organisation'
+            'title': '23'
         }
     ),
     (
         0,
         {
             'page_number': 159,
-            'scroll_distance': 749.3499999999999,
-            'title': 'Overview'
+            'scroll_distance': 781.17,
+            'title': 'PART V: OTHER RIGHTS, OBLIGATIONS AND USES'
         }
     ),
     (
-        0,
+        1,
+        {
+            'page_number': 159,
+            'scroll_distance': 749.3499999999999,
+            'title': '24'
+        }
+    ),
+    (
+        1,
         {
             'page_number': 160,
             'scroll_distance': 781.17,
-            'title': 'Rights and obligations, etc. under other laws'
+            'title': '25'
         }
     ),
     (
-        0,
+        1,
         {
             'page_number': 162,
             'scroll_distance': 781.05,
-            'title': 'Use of personal data collected before 1 July 2014'
+            'title': '26'
         }
     )
 ]

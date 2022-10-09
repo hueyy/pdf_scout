@@ -6,7 +6,7 @@ import re
 import statistics
 
 
-def score_font_name(font_name: str) -> Number:
+def score_font_name(font_name: str) -> int:
     if re.search(r"(Bold|BoldMT)$", font_name):
         return 20
     elif re.search(r"Semibold$", font_name):
@@ -18,12 +18,12 @@ def score_font_name(font_name: str) -> Number:
     return 0
 
 
-def score_font_size(font_size: Number) -> Number:
+def score_font_size(font_size: float) -> float:
     # TODO: make more sophisticated; steps should be exponential
     return font_size
 
 
-def score_word_length(length: int) -> Number:
+def score_word_length(length: int) -> float:
     MIN_THRESHOLD = 4  # penalise if < this length
     MAX_THRESHOLD = 80  # don't penalise if <= this length
     STARTING_SCORE = 100
@@ -36,8 +36,8 @@ def score_word_length(length: int) -> Number:
 
 
 def get_heading_score(word: Word) -> HeadingScore:
-    font_name: str = word["fontname"]
-    font_size: Number = word["size"]
+    font_name = word["fontname"]
+    font_size: float = word["size"]
     length: int = len(word["text"].strip(" []()./|"))
 
     font_name_score = score_font_name(font_name)

@@ -3,7 +3,7 @@ from numbers import Number
 from operator import itemgetter
 from typing import List, Tuple
 from pdf_scout.logger import debug_log
-from pdf_scout.types import RawWord, Word
+from pdf_scout.types import RawWord, Word, DocumentWords
 import statistics
 import pdfplumber
 
@@ -31,6 +31,10 @@ def guess_left_margin(words) -> List[Number]:
             if len(threshold_counts) == 1
             else [max(counts, key=lambda x: x[1])[0]]
         )
+
+
+def get_header_words(all_words: List[Word]):
+    return
 
 
 def add_line_spacing_to_words(
@@ -107,25 +111,7 @@ def raw_extract_words(pdf_file: pdfplumber.PDF) -> List[RawWord]:
     return all_words
 
 
-def extract_all_words(pdf_file: pdfplumber.PDF) -> Tuple[List[Word], List[Word]]:
-    """
-    Returns a list of dicts something like
-    {
-      'text': 'Law Society of Singapore v Loh Wai Mun Daniel[2004] SGHC 36',
-      'x0': 164.60769147751603,
-      'x1': 430.66493976121933,
-      'top': 56.17809901052692,
-      'doctop': 56.17809901052692,
-      'bottom': 85.4280988218394,
-      'upright': True, 'direction': 1,
-      'fontname': 'QDBAAA+ArialRegular',
-      'size': 14.249999908075324,
-      'page_number': 1,
-      'top_spacing': 56.18,
-      'bottom_spacing': 35.35
-    }
-    """
-
+def extract_all_words(pdf_file: pdfplumber.PDF) -> DocumentWords:
     raw_words = raw_extract_words(pdf_file)
     all_words_with_line_spacing = add_line_spacing_to_words(pdf_file, raw_words)
 
@@ -155,4 +141,7 @@ def extract_all_words(pdf_file: pdfplumber.PDF) -> Tuple[List[Word], List[Word]]
 
     debug_log("extract_all_words locals: ", locals())
 
-    return all_words_with_line_spacing, non_body_words_with_line_spacing
+    return {
+        "all_words": all_words_with_line_spacing,
+        "non_body_words": non_body_words_with_line_spacing,
+    }

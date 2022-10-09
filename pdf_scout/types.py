@@ -1,6 +1,5 @@
 from numbers import Number
-
-from typing import TypedDict
+from typing import TypedDict, List
 
 
 class RawWord(TypedDict):
@@ -18,3 +17,22 @@ class RawWord(TypedDict):
 class Word(RawWord):
     top_spacing: Number
     bottom_spacing: Number
+
+
+class DocumentWords:
+    all_words: List[Word]
+    non_body_words: List[Word]
+
+
+class HeadingScore(TypedDict):
+    font_name: Number
+    font_size: Number
+    word_length: Number
+    font: Number
+    overall: Number
+
+
+class Bookmark(TypedDict):
+    title: str
+    page_number: str
+    scroll_distance: Number

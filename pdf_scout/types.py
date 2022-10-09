@@ -19,6 +19,13 @@ class Word(RawWord):
     bottom_spacing: Number
 
 
+class Rect(TypedDict):
+    height: Number
+    width: Number
+    top: Number
+    bottom: Number
+
+
 class DocumentWords:
     all_words: List[Word]
     non_body_words: List[Word]

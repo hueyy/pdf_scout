@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pdf_scout"
-version = "0.0.4"
+version = "0.0.5"
 description = "automatically create bookmarks in a PDF file"
 authors = ["Huey <hello@huey.xyz>"]
 license = "GPL-v3"

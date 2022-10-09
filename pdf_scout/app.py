@@ -2,12 +2,26 @@ from numbers import Number
 from pdf_scout.extract import extract_all_words
 from pdf_scout.scoring import score_words
 from pdf_scout.bookmarks import generate_bookmarks, write_bookmarks
-from pdf_scout.types import Word
+from pdf_scout.types import HeadingScore, Word
 from time import time
 from typing import List, Tuple
 from operator import itemgetter
 import pdfplumber
 import typer
+
+
+def get_top_scored_words(
+    scored_words: List[Tuple[HeadingScore, Word]], levels: int
+) -> List[Tuple[int, Word]]:
+    all_scores = list(set([score["overall"] for score, _ in scored_words]))
+    all_scores.sort(reverse=True)
+    top_scores: List[Number] = all_scores[0:levels]
+    top_scored_words: List[Tuple[int, Word]] = [
+        (top_scores.index(score["overall"]), word)
+        for score, word in scored_words
+        if score["overall"] in top_scores
+    ]
+    return top_scored_words
 
 
 def main(
@@ -30,15 +44,7 @@ def main(
         extract_all_words(pdf_file)
     )
     scored_words = score_words(all_words, non_body_words)
-
-    all_scores = list(set([score["overall"] for score, _ in scored_words]))
-    all_scores.sort(reverse=True)
-    top_scores: List[Number] = all_scores[0:levels]
-    top_scored_words: List[Tuple[int, Word]] = [
-        (top_scores.index(score["overall"]), word)
-        for score, word in scored_words
-        if score["overall"] in top_scores
-    ]
+    top_scored_words = get_top_scored_words(scored_words, levels)
 
     bookmarks = generate_bookmarks(pdf_file, top_scored_words)
     pdf_file.close()

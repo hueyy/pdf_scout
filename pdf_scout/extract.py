@@ -3,7 +3,7 @@ from numbers import Number
 from operator import itemgetter
 from typing import List, Tuple
 from pdf_scout.logger import debug_log
-from pdf_scout.types import RawWord, Word, DocumentWords
+from pdf_scout.types import RawWord, Word, DocumentWords, Rect
 import statistics
 import pdfplumber
 
@@ -33,8 +33,40 @@ def guess_left_margin(words) -> List[Number]:
         )
 
 
-def get_header_words(all_words: List[Word]):
-    return
+def get_header_bottom_position(pdf_file: pdfplumber.PDF) -> Number:
+    HEADER_POSITION_THRESHOLD = 0.2  # assume header is in top 20% of page
+    HEADER_COUNT_THRESHOLD = 0.7  # assume header is on >70% of pages
+
+    # check if rectangle header
+    header_rects: List[List[Rect]] = [
+        [
+            rect
+            for rect in page.rects
+            if (
+                rect["height"] > 0
+                and rect["width"] > 0
+                and rect["bottom"] <= HEADER_POSITION_THRESHOLD * page.height
+            )
+        ]
+        for page in pdf_file.pages
+    ]
+    is_rectangle_header = len(
+        [True for rects_in_page in header_rects if len(rects_in_page) >= 1]
+    ) >= HEADER_COUNT_THRESHOLD * len(pdf_file.pages)
+
+    if is_rectangle_header:
+        return statistics.mode(
+            [rect["bottom"] for rects_in_page in header_rects for rect in rects_in_page]
+        )
+    else:
+        return 0
+
+
+def get_footer_top_position(pdf_file: pdfplumber.PDF):
+    FOOTER_POSITION_THRESHOLD = 0.2  # assume footer is in bottom 20% of page
+    FOOTER_COUNT_THRESHOLD = 0.7  # assume footer is on >70% of pages
+    # TODO
+    return None
 
 
 def add_line_spacing_to_words(
@@ -91,7 +123,9 @@ def add_line_spacing_to_word(
     }
 
 
-def raw_extract_words(pdf_file: pdfplumber.PDF) -> List[RawWord]:
+def raw_extract_words(
+    pdf_file: pdfplumber.PDF, header_bottom_position: Number = 0
+) -> List[RawWord]:
     all_words = [
         word
         for page_list in (
@@ -106,13 +140,19 @@ def raw_extract_words(pdf_file: pdfplumber.PDF) -> List[RawWord]:
             for page in pdf_file.pages
         )
         for word in page_list
-        if (len(word["text"]) > 0)  # ignore all words that are just whitespace
+        if (
+            (len(word["text"]) > 0)  # ignore all words that are just whitespace
+            and word["top"] > header_bottom_position  # ignore header
+        )
     ]
     return all_words
 
 
 def extract_all_words(pdf_file: pdfplumber.PDF) -> DocumentWords:
-    raw_words = raw_extract_words(pdf_file)
+
+    header_bottom_position = get_header_bottom_position(pdf_file)
+
+    raw_words = raw_extract_words(pdf_file, header_bottom_position)
     all_words_with_line_spacing = add_line_spacing_to_words(pdf_file, raw_words)
 
     body_top_spacing, body_bottom_spacing = guess_body_spacing(

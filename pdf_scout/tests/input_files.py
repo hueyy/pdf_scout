@@ -3,4 +3,5 @@ INPUT_FILES = [
     "./pdf/RecordTV Pte Ltd v MediaCorp TV Singapore Pte Ltd and others [2010] SGCA 43 - Judgment.pdf",
     "./pdf/PUBLIC PROSECUTOR v GCK [2020] SGCA 2 - Judgment.pdf",
     "./pdf/UQP v UQQ [2019] SGHCF 7 - Judgment.pdf",
+    "./pdf/PDPA Key Concepts.pdf",
 ]

@@ -4,4 +4,6 @@ INPUT_FILES = [
     "./pdf/PUBLIC PROSECUTOR v GCK [2020] SGCA 2 - Judgment.pdf",
     "./pdf/UQP v UQQ [2019] SGHCF 7 - Judgment.pdf",
     "./pdf/PDPA Key Concepts.pdf",
+    "./pdf/State Courts PD 2021.pdf",
+    "./pdf/Supreme Court PD 2021.pdf",
 ]

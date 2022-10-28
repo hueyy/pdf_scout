@@ -32,6 +32,7 @@ This project is a work in progress and will likely only generate suitable bookma
 
 - Singapore State Court and Supreme Court Judgments (unreported)
 - Singapore Law Reports
+- [OpenDoc](https://www.opendoc.gov.sg/)-generated PDFs, such as the [State Court Practice Directions 2021](https://epd-statecourts-2021.opendoc.gov.sg/) and the [Supreme Court Practice Directions 2021](https://epd-supcourt-2021.opendoc.gov.sg/)
 
 It may support other types of documents as well. If a particular class of document isn't supported or does not work well, please open an issue and I will consider adding support for it.
 
@@ -69,3 +70,8 @@ poetry run pytest --snapshot-update
 ```bash
 poetry run mypy pdf_scout/app.py
 ```
+
+### Tips
+
+- Processing a large PDF can take some time, so to iterate faster when debugging certain behaviour, extract the problematic part of the PDF as a separate file
+

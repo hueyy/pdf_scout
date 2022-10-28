@@ -1,15 +1,15 @@
 from itertools import groupby
-from numbers import Number
 from operator import itemgetter
 from typing import List, Tuple
 from pdf_scout.logger import debug_log
 from pdf_scout.types import RawWord, Word, DocumentWords, Rect
-from pdf_scout.utils import guess_left_margin
+from pdf_scout.utils import guess_left_margin, dict_list_unique_by
 import statistics
 import pdfplumber
+import math
 
 
-def get_header_bottom_position(pdf_file: pdfplumber.PDF) -> Number:
+def get_header_bottom_position(pdf_file: pdfplumber.PDF) -> float:
     HEADER_POSITION_THRESHOLD = 0.2  # assume header is in top 20% of page
     HEADER_COUNT_THRESHOLD = 0.7  # assume header is on >70% of pages
 
@@ -45,16 +45,21 @@ def get_footer_top_position(pdf_file: pdfplumber.PDF):
     return None
 
 
+def get_sorted_unique_line_positions(words_in_page: List[RawWord]):
+    raw_line_positions = [get_word_line_position(word) for word in words_in_page]
+    return sorted(
+        list(dict_list_unique_by(raw_line_positions, lambda x: f"{x[0],x[1]}")),
+        key=lambda x: x[0],
+    )
+
+
 def add_line_spacing_to_words(
     pdf_file: pdfplumber.PDF, all_words: List[RawWord]
 ) -> List[Word]:
     # add distance from previous & next line
     # assumes all lines are perfectly horizontal and of full width
-    line_positions: List[Tuple[int, List[Number]]] = [
-        (
-            page_number,
-            sorted(list(set([get_word_line_position(word) for word in words]))),
-        )
+    line_positions: List[Tuple[int, List[Tuple[float, float]]]] = [
+        (page_number, get_sorted_unique_line_positions(words))
         for page_number, words in groupby(all_words, key=itemgetter("page_number"))
     ]
     return [
@@ -62,20 +67,28 @@ def add_line_spacing_to_words(
     ]
 
 
-def guess_body_spacing(words: List[Word]) -> Tuple[Number, Number]:
-    return (
+def guess_body_spacing(words: List[Word]) -> float:
+    return min(
         statistics.mode([word["top_spacing"] for word in words]),
         statistics.mode([word["bottom_spacing"] for word in words]),
     )
 
 
-def get_word_line_position(word: RawWord) -> Number:
-    return word["top"]
+def guess_body_font(words: List[Word]):
+    return statistics.mode([word["fontname"] for word in words])
+
+
+def guess_body_font_size(words: List[Word]):
+    return statistics.mode([word["size"] for word in words])
+
+
+def get_word_line_position(word: RawWord) -> Tuple[float, float]:
+    return word["top"], word["bottom"]
 
 
 def add_line_spacing_to_word(
     # Adds top_spacing and bottom_spacing to dict.
-    line_positions: List[Tuple[int, List[Number]]],
+    line_positions: List[Tuple[int, List[Tuple[float, float]]]],
     word: RawWord,
     pdf_file: pdfplumber.PDF,
 ) -> Word:
@@ -84,23 +97,30 @@ def add_line_spacing_to_word(
         for page_number, page_lines in line_positions
         if page_number == word["page_number"]
     ][0]
-    index = page_line_positions.index(get_word_line_position(word))
-    cur_line_position = page_line_positions[index]
-    prev_line_position = page_line_positions[index - 1] if index != 0 else 0
-    next_line_position = (
+    cur_top, cur_bottom = get_word_line_position(word)
+    index = [
+        i
+        for i, (top, bottom) in enumerate(page_line_positions)
+        if top == cur_top and bottom == cur_bottom
+    ][0]
+    prev_top, prev_bottom = page_line_positions[index - 1] if index != 0 else (0, 0)
+    next_top, next_bottom = (
         page_line_positions[index + 1]
         if index < len(page_line_positions) - 1
-        else pdf_file.pages[word["page_number"] - 1].height
+        else (
+            pdf_file.pages[word["page_number"] - 1].height,
+            pdf_file.pages[word["page_number"] - 1].height,
+        )
     )
     return {
         **word,
-        "top_spacing": round(cur_line_position - prev_line_position, 2),
-        "bottom_spacing": round(next_line_position - cur_line_position, 2),
+        "top_spacing": round(cur_top - prev_bottom, 2),
+        "bottom_spacing": round(next_top - cur_bottom, 2),
     }
 
 
 def raw_extract_words(
-    pdf_file: pdfplumber.PDF, header_bottom_position: Number = 0
+    pdf_file: pdfplumber.PDF, header_bottom_position: float = 0
 ) -> List[RawWord]:
     all_words = [
         word
@@ -124,6 +144,34 @@ def raw_extract_words(
     return all_words
 
 
+def get_heading_words(all_words: List[Word], left_margins: List[float]) -> List[Word]:
+    body_font = guess_body_font(all_words)
+    body_font_size = guess_body_font_size(all_words)
+
+    body_spacing = guess_body_spacing(all_words)
+
+    return [
+        word
+        for word in all_words
+        if (
+            (
+                not (
+                    word["fontname"] == body_font
+                    and math.isclose(word["size"], body_font_size, rel_tol=0.01)
+                )
+            )
+            and not (  # same font size as body and same spacing as body
+                math.isclose(word["size"], body_font_size, rel_tol=0.01)
+                and math.isclose(word["top_spacing"], body_spacing, rel_tol=0.05)
+                and math.isclose(word["bottom_spacing"], body_spacing, rel_tol=0.05)
+            )
+            and (  # ignore all words not at left margin
+                round(word["x0"], None) in left_margins
+            )
+        )
+    ]
+
+
 def extract_all_words(pdf_file: pdfplumber.PDF) -> DocumentWords:
 
     header_bottom_position = get_header_bottom_position(pdf_file)
@@ -131,33 +179,17 @@ def extract_all_words(pdf_file: pdfplumber.PDF) -> DocumentWords:
     raw_words = raw_extract_words(pdf_file, header_bottom_position)
     all_words_with_line_spacing = add_line_spacing_to_words(pdf_file, raw_words)
 
-    body_top_spacing, body_bottom_spacing = guess_body_spacing(
-        all_words_with_line_spacing
-    )
-
     # TODO: add some margin of appreciation to account for indented headers, footnotes, etc
     # TODO: handle center-aligned text
     left_margins = guess_left_margin(pdf_file, all_words_with_line_spacing)
 
-    non_body_words_with_line_spacing = [
-        word
-        for word in all_words_with_line_spacing
-        if (
-            (
-                # ignore all words with normal paragraph spacing
-                # 5% because line spacing is not always precise
-                word["top_spacing"] >= body_top_spacing * 1.05
-                and word["bottom_spacing"] >= body_bottom_spacing * 1.05
-            )
-            and (  # ignore all words not at left margin
-                round(word["x0"]) in left_margins
-            )
-        )
-    ]
+    heading_words_with_line_spacing = get_heading_words(
+        all_words_with_line_spacing, left_margins
+    )
 
     debug_log("extract_all_words locals: ", locals())
 
     return {
         "all_words": all_words_with_line_spacing,
-        "non_body_words": non_body_words_with_line_spacing,
+        "heading_words": heading_words_with_line_spacing,
     }

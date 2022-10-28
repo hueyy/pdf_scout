@@ -58,24 +58,33 @@ def write_bookmarks(
     return
 
 
+def make_bookmark(
+    pdf_file: pdfplumber.PDF, rank: int, paragraph: List[Word]
+) -> Tuple[int, Bookmark]:
+    first_word = paragraph[0]
+    page_number = first_word["page_number"]
+    text = " ".join([word["text"] for word in paragraph])
+    return (
+        rank,
+        dict(
+            title=text,
+            page_number=page_number,
+            scroll_distance=(
+                pdf_file.pages[page_number - 1].height
+                - first_word["top"]
+                + first_word["bottom"]
+                - first_word["top"]
+            ),
+        ),
+    )
+
+
 def generate_bookmarks(
-    pdf_file: pdfplumber.PDF, top_scored_words: List[Tuple[int, Word]]
+    pdf_file: pdfplumber.PDF, top_scored_paragraphs: List[Tuple[int, List[Word]]]
 ):
     bookmarks: List[Tuple[int, Bookmark]] = [
-        (
-            rank,
-            dict(
-                title=word["text"],
-                page_number=word["page_number"],
-                scroll_distance=(
-                    pdf_file.pages[word["page_number"] - 1].height
-                    - word["top"]
-                    + word["bottom"]
-                    - word["top"]
-                ),
-            ),
-        )
-        for rank, word in top_scored_words
+        make_bookmark(pdf_file, rank, paragraph)
+        for rank, paragraph in top_scored_paragraphs
     ]
 
     debug_log("add_bookmarks_to_pdf locals: ", locals())

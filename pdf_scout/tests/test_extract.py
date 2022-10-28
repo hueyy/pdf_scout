@@ -24,5 +24,5 @@ def test_guess_left_margin(file_raw_output, snapshot):
 
 
 def test_extract_all_words(file_clean_output, snapshot):
-    _, all_words = file_clean_output
-    snapshot.assert_match(all_words)
+    _, all_words_tuple = file_clean_output
+    snapshot.assert_match(all_words_tuple)

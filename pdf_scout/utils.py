@@ -1,4 +1,3 @@
-from numbers import Number
 import pdfplumber
 from typing import List, Tuple
 from pdf_scout.logger import debug_log
@@ -11,11 +10,11 @@ A4_COMMON_LEFT_MARGINS = [1.27, 1.9, 2.54, 3.18]
 TAB_STOP_WIDTH = 1.27
 
 
-def points_to_cm(points: Number):
+def points_to_cm(points: float):
     return points / 72 * 2.54
 
 
-def cm_to_points(cm: Number):
+def cm_to_points(cm: float):
     return cm * 72 / 2.54
 
 
@@ -26,9 +25,7 @@ def is_a4_page(page) -> bool:
     )
 
 
-def guess_left_margin_for_misc_document(
-    counts: List[Tuple[Number, int]]
-) -> List[Number]:
+def guess_left_margin_for_misc_document(counts: List[Tuple[float, int]]) -> List[float]:
     std_dev = statistics.pstdev([count for _, count in counts])
     mean = statistics.mean([count for _, count in counts])
     threshold_counts = [
@@ -51,7 +48,7 @@ def guess_left_margin_for_misc_document(
         )
 
 
-def guess_left_margin_for_a4_document(counts: List[Tuple[Number, int]]) -> List[Number]:
+def guess_left_margin_for_a4_document(counts: List[Tuple[float, int]]) -> List[float]:
     left_margins = [left_margin for left_margin, _ in counts]
     std_dev = statistics.pstdev([count for _, count in counts])
     mean = statistics.mean([count for _, count in counts])
@@ -65,7 +62,7 @@ def guess_left_margin_for_a4_document(counts: List[Tuple[Number, int]]) -> List[
     return guess_left_margin_for_misc_document(counts)
 
 
-def guess_left_margin(pdf_file: pdfplumber.PDF, words: List[Word]) -> List[Number]:
+def guess_left_margin(pdf_file: pdfplumber.PDF, words: List[Word]) -> List[float]:
     words_x0 = [round(word["x0"]) for word in words]
     counts = [(x0, words_x0.count(x0)) for x0 in set(words_x0)]
 
@@ -76,3 +73,7 @@ def guess_left_margin(pdf_file: pdfplumber.PDF, words: List[Word]) -> List[Numbe
         return guess_left_margin_for_a4_document(counts)
     else:
         return guess_left_margin_for_misc_document(counts)
+
+
+def dict_list_unique_by(dict_list, func):
+    return list({func(item): item for item in dict_list}.values())

@@ -20,6 +20,22 @@ snapshots['test_generate_bookmarks[./pdf/Law Society of Singapore v Loh Wai Mun 
         0,
         {
             'page_number': 1,
+            'scroll_distance': 762.4686296486216,
+            'title': 'Case Number Decision Date Tribunal/Court Coram Counsel Name(s) Parties Legal Profession'
+        }
+    ),
+    (
+        1,
+        {
+            'page_number': 1,
+            'scroll_distance': 634.9686304711056,
+            'title': 'Profession Act (Cap 161, 2001 Rev Ed), s 409 Penal Code (Cap 224, 1985 Rev Ed)'
+        }
+    ),
+    (
+        0,
+        {
+            'page_number': 1,
             'scroll_distance': 570.4686308871857,
             'title': 'Yong Pung How CJ (delivering the judgment of the court):'
         }
@@ -59,6 +75,14 @@ snapshots['test_generate_bookmarks[./pdf/Law Society of Singapore v Loh Wai Mun 
 ]
 
 snapshots['test_generate_bookmarks[./pdf/PDPA Key Concepts.pdf] 1'] = [
+    (
+        0,
+        {
+            'page_number': 7,
+            'scroll_distance': 781.17,
+            'title': 'PART I: INTRODUCTION AND OVERVIEW'
+        }
+    ),
     (
         0,
         {
@@ -124,19 +148,19 @@ snapshots['test_generate_bookmarks[./pdf/PDPA Key Concepts.pdf] 1'] = [
         }
     ),
     (
-        0,
+        1,
         {
-            'page_number': 155,
-            'scroll_distance': 781.05,
-            'title': 'PART'
+            'page_number': 150,
+            'scroll_distance': 781.17,
+            'title': '21'
         }
     ),
     (
         0,
         {
             'page_number': 155,
-            'scroll_distance': 761.3499999999999,
-            'title': 'INFORMATION'
+            'scroll_distance': 781.05,
+            'title': 'PART INFORMATION'
         }
     ),
     (
@@ -160,15 +184,7 @@ snapshots['test_generate_bookmarks[./pdf/PDPA Key Concepts.pdf] 1'] = [
         {
             'page_number': 159,
             'scroll_distance': 781.17,
-            'title': 'PART V: OTHER RIGHTS, OBLIGATIONS AND USES'
-        }
-    ),
-    (
-        1,
-        {
-            'page_number': 159,
-            'scroll_distance': 749.3499999999999,
-            'title': '24'
+            'title': 'PART V: OTHER RIGHTS, OBLIGATIONS AND USES 24'
         }
     ),
     (
@@ -202,72 +218,16 @@ snapshots['test_generate_bookmarks[./pdf/PUBLIC PROSECUTOR v GCK [2020] SGCA 2 -
         0,
         {
             'page_number': 3,
-            'scroll_distance': 404.9690160899999,
-            'title': 'Introduction'
-        }
-    ),
-    (
-        0,
-        {
-            'page_number': 5,
-            'scroll_distance': 723.9580135399999,
-            'title': 'Background facts'
-        }
-    ),
-    (
-        1,
-        {
-            'page_number': 6,
-            'scroll_distance': 723.9580135399999,
-            'title': 'Accounts of the events on the day of the alleged offence'
+            'scroll_distance': 434.7680273299999,
+            'title': 'Sundaresh Menon CJ (delivering the judgment of the court): Introduction'
         }
     ),
     (
         2,
-        {
-            'page_number': 6,
-            'scroll_distance': 694.15901471,
-            'title': 'Mdm RM’s, Mr ST’s, and Dr S’s testimonies'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 6,
-            'scroll_distance': 264.4940252399999,
-            'title': 'Nurse MJ’s testimony'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 8,
-            'scroll_distance': 526.3740148699998,
-            'title': 'Nurse DS’s testimony'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 9,
-            'scroll_distance': 687.2600145499999,
-            'title': 'The Respondent’s testimony'
-        }
-    ),
-    (
-        1,
         {
             'page_number': 10,
             'scroll_distance': 583.77001096,
             'title': 'Events subsequent to the alleged incident'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 10,
-            'scroll_distance': 393.0850286599999,
-            'title': 'The police investigations'
         }
     ),
     (
@@ -297,29 +257,37 @@ snapshots['test_generate_bookmarks[./pdf/PUBLIC PROSECUTOR v GCK [2020] SGCA 2 -
     (
         2,
         {
-            'page_number': 19,
-            'scroll_distance': 500.9780187699999,
-            'title': 'The Applicable Standard Question'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 21,
-            'scroll_distance': 723.9580135399999,
-            'title': 'The Inherent Reliability Question'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 21,
-            'scroll_distance': 349.8710088799998,
-            'title': 'The Specific Test Question'
+            'page_number': 18,
+            'scroll_distance': 710.15901471,
+            'title': 'Question'
         }
     ),
     (
         1,
+        {
+            'page_number': 22,
+            'scroll_distance': 491.0350183799999,
+            'title': '[Specific Test Question] evidence when it applies the “unusually convincing” standard?'
+        }
+    ),
+    (
+        0,
+        {
+            'page_number': 22,
+            'scroll_distance': 334.0120000999999,
+            'title': 'The reference'
+        }
+    ),
+    (
+        1,
+        {
+            'page_number': 22,
+            'scroll_distance': 258.55101531,
+            'title': 'Reference to Court of Appeal of criminal matter determined by High Court in exercise of its appellate or revisionary jurisdiction 397.'
+        }
+    ),
+    (
+        2,
         {
             'page_number': 25,
             'scroll_distance': 613.16601468,
@@ -327,19 +295,11 @@ snapshots['test_generate_bookmarks[./pdf/PUBLIC PROSECUTOR v GCK [2020] SGCA 2 -
         }
     ),
     (
-        2,
+        1,
         {
             'page_number': 25,
-            'scroll_distance': 297.5370245099999,
-            'title': 'Whether questions of law of public interest had arisen from the Judge’s decision'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 29,
-            'scroll_distance': 385.84302426999994,
-            'title': 'Whether the Judge’s determination of law had affected the outcome of the case'
+            'scroll_distance': 335.07000678999987,
+            'title': '[Specific Test Question] evidence when it applies the “unusually convincing” standard?'
         }
     ),
     (
@@ -353,17 +313,17 @@ snapshots['test_generate_bookmarks[./pdf/PUBLIC PROSECUTOR v GCK [2020] SGCA 2 -
     (
         2,
         {
-            'page_number': 35,
-            'scroll_distance': 443.5820074199999,
-            'title': 'The abolition of the “suspect categories” of witnesses'
+            'page_number': 33,
+            'scroll_distance': 597.5690107500001,
+            'title': 'The “unusually convincing” standard applies to all instances where the uncorroborated testimony of an eyewitness'
         }
     ),
     (
         2,
         {
-            'page_number': 38,
-            'scroll_distance': 723.9580135399999,
-            'title': 'The “unusually convincing” standard applies across all types of offences'
+            'page_number': 33,
+            'scroll_distance': 556.17201138,
+            'title': 'conviction'
         }
     ),
     (
@@ -375,15 +335,7 @@ snapshots['test_generate_bookmarks[./pdf/PUBLIC PROSECUTOR v GCK [2020] SGCA 2 -
         }
     ),
     (
-        0,
-        {
-            'page_number': 45,
-            'scroll_distance': 723.9580135399999,
-            'title': 'Our answer to the Specific Test Question'
-        }
-    ),
-    (
-        1,
+        2,
         {
             'page_number': 45,
             'scroll_distance': 694.15901471,
@@ -391,7 +343,7 @@ snapshots['test_generate_bookmarks[./pdf/PUBLIC PROSECUTOR v GCK [2020] SGCA 2 -
         }
     ),
     (
-        1,
+        2,
         {
             'page_number': 50,
             'scroll_distance': 583.77001096,
@@ -401,81 +353,17 @@ snapshots['test_generate_bookmarks[./pdf/PUBLIC PROSECUTOR v GCK [2020] SGCA 2 -
     (
         2,
         {
-            'page_number': 51,
-            'scroll_distance': 277.9980230399999,
-            'title': 'The concepts underpinning the Prosecution’s burden of proof'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 54,
-            'scroll_distance': 723.9580135399999,
-            'title': 'of the evidence adduced by the Prosecution'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 54,
-            'scroll_distance': 567.77001096,
-            'title': 'Proof beyond a reasonable doubt within the Prosecution’s case'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 58,
-            'scroll_distance': 645.86401273,
-            'title': 'Proof beyond a reasonable doubt on the totality of the evidence'
-        }
-    ),
-    (
-        1,
-        {
             'page_number': 60,
             'scroll_distance': 199.90402889999996,
             'title': 'Summary of our answer to the Specific Test Question'
         }
     ),
     (
-        0,
-        {
-            'page_number': 64,
-            'scroll_distance': 723.9580135399999,
-            'title': 'Analysis of the facts in light of our answers to the Reframed Question'
-        }
-    ),
-    (
-        1,
-        {
-            'page_number': 65,
-            'scroll_distance': 723.9580135399999,
-            'title': 'The Inherent Reliability Question on the facts'
-        }
-    ),
-    (
-        1,
-        {
-            'page_number': 66,
-            'scroll_distance': 723.9580135399999,
-            'title': 'The Specific Test Question on the facts'
-        }
-    ),
-    (
         2,
         {
-            'page_number': 66,
-            'scroll_distance': 694.15901471,
-            'title': 'No reasonable doubt had arisen within the Prosecution’s case'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 67,
-            'scroll_distance': 340.09201718999986,
-            'title': 'No reasonable doubt had arisen on the totality of the evidence'
+            'page_number': 69,
+            'scroll_distance': 504.97800731999996,
+            'title': 'moment, heading to the toilet to dispose of the “food greens”'
         }
     ),
     (
@@ -483,19 +371,11 @@ snapshots['test_generate_bookmarks[./pdf/PUBLIC PROSECUTOR v GCK [2020] SGCA 2 -
         {
             'page_number': 75,
             'scroll_distance': 262.8010015599999,
-            'title': 'The sentence for the OM Charge'
+            'title': 'The sentence for the OM Charge The framework for outrage of modesty offences under s 354(1) of the Penal Code'
         }
     ),
     (
-        1,
-        {
-            'page_number': 75,
-            'scroll_distance': 246.80102063999982,
-            'title': 'The framework for outrage of modesty offences under s 354(1) of the Penal Code'
-        }
-    ),
-    (
-        1,
+        2,
         {
             'page_number': 78,
             'scroll_distance': 324.09201718999986,
@@ -503,7 +383,7 @@ snapshots['test_generate_bookmarks[./pdf/PUBLIC PROSECUTOR v GCK [2020] SGCA 2 -
         }
     ),
     (
-        1,
+        2,
         {
             'page_number': 79,
             'scroll_distance': 199.90402889999996,
@@ -511,27 +391,19 @@ snapshots['test_generate_bookmarks[./pdf/PUBLIC PROSECUTOR v GCK [2020] SGCA 2 -
         }
     ),
     (
-        2,
+        1,
         {
-            'page_number': 80,
-            'scroll_distance': 261.9980230399999,
-            'title': 'Dr Ng’s psychiatric report'
+            'page_number': 81,
+            'scroll_distance': 553.1290125200001,
+            'title': '32. relevant facts made by a person (whether orally, in a document or otherwise), are themselves relevant facts in the following cases:'
         }
     ),
     (
         2,
         {
-            'page_number': 82,
-            'scroll_distance': 402.1860113299999,
-            'title': 'The evidence of the Respondent’s premeditation'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 84,
-            'scroll_distance': 604.46801664,
-            'title': '“[O]ne of the worst cases of its sort”'
+            'page_number': 85,
+            'scroll_distance': 209.00500012999976,
+            'title': 'The Court of Appeal’s power to substitute a lower court’s sentence in a criminal reference'
         }
     ),
     (
@@ -565,32 +437,8 @@ snapshots['test_generate_bookmarks[./pdf/RecordTV Pte Ltd v MediaCorp TV Singapo
         0,
         {
             'page_number': 1,
-            'scroll_distance': 744.468629764737,
-            'title': 'Decision Date'
-        }
-    ),
-    (
-        0,
-        {
-            'page_number': 1,
-            'scroll_distance': 727.2186298760142,
-            'title': 'Tribunal/Court'
-        }
-    ),
-    (
-        0,
-        {
-            'page_number': 1,
-            'scroll_distance': 709.9686299872915,
-            'title': 'Coram'
-        }
-    ),
-    (
-        0,
-        {
-            'page_number': 1,
-            'scroll_distance': 692.7186300985687,
-            'title': 'Counsel Name(s)'
+            'scroll_distance': 761.7186296534597,
+            'title': 'Case Number Decision Date Tribunal/Court Coram Counsel Name(s)'
         }
     ),
     (
@@ -598,15 +446,7 @@ snapshots['test_generate_bookmarks[./pdf/RecordTV Pte Ltd v MediaCorp TV Singapo
         {
             'page_number': 1,
             'scroll_distance': 651.4686303646665,
-            'title': 'Parties'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 1,
-            'scroll_distance': 624.4686305388396,
-            'title': 'Copyright'
+            'title': 'Parties Copyright'
         }
     ),
     (
@@ -614,15 +454,7 @@ snapshots['test_generate_bookmarks[./pdf/RecordTV Pte Ltd v MediaCorp TV Singapo
         {
             'page_number': 1,
             'scroll_distance': 596.7186307178508,
-            'title': 'Copyright'
-        }
-    ),
-    (
-        2,
-        {
-            'page_number': 1,
-            'scroll_distance': 568.968630896862,
-            'title': 'Words and Phrases'
+            'title': 'Copyright Words and Phrases'
         }
     ),
     (
@@ -630,31 +462,15 @@ snapshots['test_generate_bookmarks[./pdf/RecordTV Pte Ltd v MediaCorp TV Singapo
         {
             'page_number': 1,
             'scroll_distance': 440.7186317241842,
-            'title': 'V K Rajah JA (delivering the judgment of the court):'
+            'title': 'V K Rajah JA (delivering the judgment of the court): Introduction'
         }
     ),
     (
-        0,
-        {
-            'page_number': 1,
-            'scroll_distance': 412.96863190319544,
-            'title': 'Introduction'
-        }
-    ),
-    (
-        0,
+        2,
         {
             'page_number': 2,
-            'scroll_distance': 755.7186314312419,
-            'title': 'The facts'
-        }
-    ),
-    (
-        1,
-        {
-            'page_number': 2,
-            'scroll_distance': 727.968631610253,
-            'title': 'Parties to the dispute'
+            'scroll_distance': 783.4686312522306,
+            'title': 'RecordTV Pte Ltd v MediaCorp TV Singapore Pte Ltd and others The facts Parties to the dispute'
         }
     ),
     (
@@ -686,15 +502,7 @@ snapshots['test_generate_bookmarks[./pdf/RecordTV Pte Ltd v MediaCorp TV Singapo
         {
             'page_number': 4,
             'scroll_distance': 202.9686440135671,
-            'title': 'MediaCorp’s counterclaim against RecordTV for copyright infringement'
-        }
-    ),
-    (
-        1,
-        {
-            'page_number': 4,
-            'scroll_distance': 175.21864419257838,
-            'title': 'The relevant provisions of the Copyright Act'
+            'title': 'MediaCorp’s counterclaim against RecordTV for copyright infringement The relevant provisions of the Copyright Act'
         }
     ),
     (
@@ -740,6 +548,38 @@ snapshots['test_generate_bookmarks[./pdf/RecordTV Pte Ltd v MediaCorp TV Singapo
     (
         2,
         {
+            'page_number': 11,
+            'scroll_distance': 92.71865135985138,
+            'title': 'WIPO Copyright Treaty, it would seem that the recorded MediaCorp shows were communicated once'
+        }
+    ),
+    (
+        2,
+        {
+            'page_number': 12,
+            'scroll_distance': 811.9686318437658,
+            'title': 'they were made available for viewing by the Registered Users who had requested the recording ofthose shows'
+        }
+    ),
+    (
+        2,
+        {
+            'page_number': 14,
+            'scroll_distance': 797.7186575676893,
+            'title': 'Network'
+        }
+    ),
+    (
+        1,
+        {
+            'page_number': 14,
+            'scroll_distance': 197.71866143820228,
+            'title': 'The Third Issue: Did RecordTV authorise the doing in Singapore of any act comprised inMediaCorp’s copyright?'
+        }
+    ),
+    (
+        2,
+        {
             'page_number': 15,
             'scroll_distance': 586.9686440509009,
             'title': 'The concept of authorisation liability'
@@ -749,8 +589,32 @@ snapshots['test_generate_bookmarks[./pdf/RecordTV Pte Ltd v MediaCorp TV Singapo
         2,
         {
             'page_number': 15,
-            'scroll_distance': 148.96864687637537,
-            'title': 'Our reasons for ruling in favour of RecordTV on the Third Issue'
+            'scroll_distance': 360.4686455120188,
+            'title': 'Records Inc v Music Collection International Limited and Another'
+        }
+    ),
+    (
+        2,
+        {
+            'page_number': 15,
+            'scroll_distance': 176.71864669736317,
+            'title': 'copyright Our reasons for ruling in favour of RecordTV on the Third Issue'
+        }
+    ),
+    (
+        2,
+        {
+            'page_number': 17,
+            'scroll_distance': 91.96867287607131,
+            'title': 'alia'
+        }
+    ),
+    (
+        2,
+        {
+            'page_number': 18,
+            'scroll_distance': 697.9686540905474,
+            'title': '(No 3)'
         }
     ),
     (
@@ -821,19 +685,19 @@ snapshots['test_generate_bookmarks[./pdf/UQP v UQQ [2019] SGHCF 7 - Judgment.pdf
         }
     ),
     (
-        2,
-        {
-            'page_number': 2,
-            'scroll_distance': 506.97578000000004,
-            'title': 'Foo Soon Yien and Foo Bei Ying (BR Law Corporation) for the appellant/wife; Tan Yew Fai (YF Tan & Co) for the respondent/husband.'
-        }
-    ),
-    (
         0,
         {
             'page_number': 2,
             'scroll_distance': 435.035,
             'title': 'Choo Han TeckJ:'
+        }
+    ),
+    (
+        2,
+        {
+            'page_number': 4,
+            'scroll_distance': 168.1831999999995,
+            'title': 'Fun v Chua Hock Chye'
         }
     )
 ]

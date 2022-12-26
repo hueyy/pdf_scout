@@ -2,11 +2,13 @@ from itertools import groupby
 from operator import itemgetter
 from typing import List, Tuple
 from pdf_scout.logger import debug_log
-from pdf_scout.types import RawWord, Word, DocumentWords, Rect
+from pdf_scout.custom_types import RawWord, Word, DocumentWords, Rect
 from pdf_scout.utils import guess_left_margin, dict_list_unique_by
 import statistics
 import pdfplumber
 import math
+from unidecode import unidecode
+from functools import reduce
 
 
 def get_header_bottom_position(pdf_file: pdfplumber.PDF) -> float:
@@ -126,7 +128,7 @@ def raw_extract_words(
         word
         for page_list in (
             [
-                {**word, "text": word["text"].strip(), "page_number": page.page_number}
+                {**word, "text": unidecode(word["text"]).strip(), "page_number": page.page_number}
                 for word in page.extract_words(
                     keep_blank_chars=True,
                     use_text_flow=True,
@@ -141,7 +143,28 @@ def raw_extract_words(
             and word["top"] > header_bottom_position  # ignore header
         )
     ]
-    return all_words
+    
+    # combine words on the same line
+    all_words_in_lines = []
+    same_line = lambda prev, cur: (
+        cur["top"] == prev["top"] and
+        cur["bottom"] == prev["bottom"] and
+        cur["fontname"] == prev["fontname"] and
+        cur["size"] == prev["size"] and 
+        cur["page_number"] == prev["page_number"]
+    )
+    for index, raw_word in enumerate(all_words):
+        if index == 0:
+            all_words_in_lines.append(raw_word)
+        if same_line(all_words[index - 1], raw_word):
+            all_words_in_lines[-1] = {
+                **all_words_in_lines[-1],
+                "text": all_words_in_lines[-1]["text"] + " " + raw_word["text"]
+            }
+        else:
+            all_words_in_lines.append(raw_word)
+
+    return all_words_in_lines
 
 
 def get_heading_words(all_words: List[Word], left_margins: List[float]) -> List[Word]:
@@ -155,15 +178,17 @@ def get_heading_words(all_words: List[Word], left_margins: List[float]) -> List[
         for word in all_words
         if (
             (
-                not (
+                not ( # same font as body (and not bold / italic) and same font size as body
                     word["fontname"] == body_font
                     and math.isclose(word["size"], body_font_size, rel_tol=0.01)
                 )
             )
             and not (  # same font size as body and same spacing as body
                 math.isclose(word["size"], body_font_size, rel_tol=0.01)
-                and math.isclose(word["top_spacing"], body_spacing, rel_tol=0.05)
-                and math.isclose(word["bottom_spacing"], body_spacing, rel_tol=0.05)
+                and (
+                    math.isclose(word["top_spacing"], body_spacing, rel_tol=0.05)
+                    or math.isclose(word["bottom_spacing"], body_spacing, rel_tol=0.05)
+                )
             )
             and (  # ignore all words not at left margin
                 round(word["x0"], None) in left_margins

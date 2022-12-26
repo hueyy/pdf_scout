@@ -6,7 +6,7 @@ import pytest
 import pdfplumber
 from operator import itemgetter
 from typing import Tuple, List
-from pdf_scout.types import DocumentWords, HeadingScore, RawWord, Word
+from pdf_scout.custom_types import DocumentWords, HeadingScore, RawWord, Word
 
 
 @pytest.fixture(scope="session", params=INPUT_FILES)

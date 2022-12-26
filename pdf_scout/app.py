@@ -1,7 +1,7 @@
 from pdf_scout.extract import extract_all_words
 from pdf_scout.scoring import score_paragraphs
 from pdf_scout.bookmarks import generate_bookmarks, write_bookmarks
-from pdf_scout.types import HeadingScore, Word
+from pdf_scout.custom_types import HeadingScore, Word
 from pdf_scout.paragraphs import group_words_in_paragraphs
 from time import time
 from typing import List, Tuple

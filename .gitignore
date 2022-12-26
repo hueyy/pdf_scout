@@ -8,3 +8,5 @@ __pycache__
 /.venv
 /dist
 /.mypy_cache
+
+/pdf_scout/test.py

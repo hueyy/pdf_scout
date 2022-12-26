@@ -1,7 +1,7 @@
 import pdfplumber
 from typing import List, Tuple
 from pdf_scout.logger import debug_log
-from pdf_scout.types import Word
+from pdf_scout.custom_types import Word
 import statistics
 
 

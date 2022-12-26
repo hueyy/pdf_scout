@@ -1,7 +1,7 @@
 from PyPDF2 import PdfMerger
 from typing import Any, List, Tuple
 from pdf_scout.logger import debug_log
-from pdf_scout.types import Word, Bookmark
+from pdf_scout.custom_types import Word, Bookmark
 import pdfplumber
 
 

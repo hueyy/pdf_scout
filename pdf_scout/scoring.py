@@ -1,4 +1,4 @@
-from pdf_scout.types import Word, HeadingScore
+from pdf_scout.custom_types import Word, HeadingScore
 from typing import List, Tuple
 import re
 import statistics
@@ -54,6 +54,11 @@ def calculate_font_score(font_name: str, font_size: float):
     font_size_score = score_font_size(font_size)
     return font_name_score, font_size_score, font_name_score + font_size_score
 
+def score_capitalisation(first_word: Word):
+    match = re.search(r"[0-9aA-zZ]", first_word["text"][0])
+    if match:
+        return 0 if re.match(r"[a-z]", match.group(0)) is None else 10
+    return 0
 
 def get_font_score_for_word(word: Word) -> float:
     font_name = word["fontname"]
@@ -71,12 +76,14 @@ def get_heading_score(paragraph: List[Word]) -> HeadingScore:
         font_name, font_size
     )
     word_length_score = score_word_length(length)
-    score = round(font_name_score + font_size_score + word_length_score, 2)
+    capitalisation_score = score_capitalisation(paragraph[0])
+    score = round(font_name_score + font_size_score + word_length_score + capitalisation_score, 2)
 
     return {
         "font_name": round(font_name_score, 2),
         "font_size": round(font_size_score, 2),
         "word_length": round(word_length_score, 2),
+        "capitalisation": round(capitalisation_score, 2),
         "font": round(font_score, 2),
         "overall": score,
     }

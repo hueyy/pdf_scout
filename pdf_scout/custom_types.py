@@ -25,15 +25,16 @@ class Rect(TypedDict):
     bottom: float
 
 
-class DocumentWords(TypedDict):
-    all_words: List[Word]
-    heading_words: List[Word]
+class DocumentLines(TypedDict):
+    all_lines: List[List[Word]]
+    heading_lines: List[List[Word]]
 
 
 class HeadingScore(TypedDict):
     font_name: float
     font_size: float
     word_length: float
+    capitalisation: float
     font: float
     overall: float
 

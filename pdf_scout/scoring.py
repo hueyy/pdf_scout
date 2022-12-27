@@ -1,23 +1,23 @@
 from pdf_scout.custom_types import Word, HeadingScore
-from typing import List, Tuple
+from typing import List, Tuple, Sequence
 import re
 import statistics
 
 
 def font_is_bold(font_name: str) -> bool:
-    return re.search(r"(Bold|BoldMT|\.B)$", font_name)
+    return re.search(r"(Bold|BoldMT|\.B)$", font_name) is not None
 
 
 def font_is_semibold(font_name: str) -> bool:
-    return re.search(r"Semibold$", font_name)
+    return re.search(r"Semibold$", font_name) is not None
 
 
 def font_is_bolditalic(font_name: str) -> bool:
-    return re.search(r"(BoldItalic|BoldItalicMT)$", font_name)
+    return re.search(r"(BoldItalic|BoldItalicMT)$", font_name) is not None
 
 
 def font_is_italic(font_name: str) -> bool:
-    return re.search(r"(It|Italic|ItalicMT|Oblique)$", font_name)
+    return re.search(r"(It|Italic|ItalicMT|Oblique)$", font_name) is not None
 
 
 def score_font_name(font_name: str) -> int:
@@ -45,7 +45,7 @@ def score_word_length(length: int) -> float:
         return STARTING_SCORE
     elif length > MAX_THRESHOLD:
         return STARTING_SCORE - (length if length <= STARTING_SCORE else STARTING_SCORE)
-    elif length < MIN_THRESHOLD:
+    else: # length < MIN_THRESHOLD:
         return STARTING_SCORE * length / MIN_THRESHOLD
 
 
@@ -67,16 +67,19 @@ def get_font_score_for_word(word: Word) -> float:
     return round(font_score, 2)
 
 
-def get_heading_score(paragraph: List[Word]) -> HeadingScore:
-    font_name = statistics.mode([word["fontname"] for word in paragraph])
-    font_size: float = statistics.mode([word["size"] for word in paragraph])
-    length: int = len(" ".join([word["text"] for word in paragraph]).strip(" []()./|"))
+def get_heading_score(paragraph: List[List[Word]]) -> HeadingScore:
+    font_name_score: int = min([
+        score_font_name(word["fontname"]) for line in paragraph for word in line
+    ])
+    font_size_score: float = min([
+        score_font_size(word["size"]) for line in paragraph for word in line
+    ])
+    length: int = len(" ".join([word["text"] for line in paragraph for word in line]).strip(" []()./|"))
 
-    font_name_score, font_size_score, font_score = calculate_font_score(
-        font_name, font_size
-    )
+    font_score = font_name_score + font_size_score
     word_length_score = score_word_length(length)
-    capitalisation_score = score_capitalisation(paragraph[0])
+
+    capitalisation_score = score_capitalisation(paragraph[0][0])
     score = round(font_name_score + font_size_score + word_length_score + capitalisation_score, 2)
 
     return {
@@ -89,17 +92,18 @@ def get_heading_score(paragraph: List[Word]) -> HeadingScore:
     }
 
 
-def guess_body_score(word_list: Tuple[HeadingScore, Word]) -> float:
+def guess_body_score(word_list: Sequence[Tuple[HeadingScore, Word]]) -> float:
     return statistics.mode([score["font"] for score, _ in word_list])
 
 
 def score_paragraphs(
-    all_words: List[Word], heading_paragraphs: List[List[Word]]
-) -> List[Tuple[HeadingScore, List[Word]]]:
-    scored_all_words: List[Tuple[HeadingScore, Word]] = [
-        (get_font_score_for_word(word), word) for word in all_words
+    all_lines: List[List[Word]],
+    heading_paragraphs: List[List[List[Word]]]
+) -> List[Tuple[HeadingScore, List[List[Word]]]]:
+    all_words_scores: List[float] = [
+        get_font_score_for_word(word) for line in all_lines for word in line
     ]
-    body_font_score = statistics.mode([score for score, _ in scored_all_words])
+    body_font_score: float = statistics.mode([score for score in all_words_scores])
 
     scored_heading_paragraphs = [
         (get_heading_score(paragraph), paragraph) for paragraph in heading_paragraphs

@@ -1,4 +1,5 @@
-from PyPDF2 import PdfMerger
+from pypdf import PdfMerger
+from pypdf.generic import Fit
 from typing import Any, List, Tuple
 from pdf_scout.logger import debug_log
 from pdf_scout.custom_types import Word, Bookmark
@@ -15,14 +16,13 @@ def write_bookmarks(
     # last item in list is last outline item added
 
     add_bookmark_to_writer = lambda writer, bookmark, parent: writer.add_outline_item(
-        bookmark["title"],
-        bookmark["page_number"] - 1,
-        parent,
-        None,
-        False,
-        False,
-        "/FitH",
-        bookmark["scroll_distance"],
+        title=bookmark["title"],
+        page_number=int(bookmark["page_number"]) - 1,
+        parent=parent,
+        color=None,
+        bold=False,
+        italic=False,
+        fit=Fit.fit_horizontally(bookmark["scroll_distance"]),
     )
     get_last_bookmark = (
         lambda parent_bs: parent_bs[-1][1] if len(parent_bs) >= 1 else None
@@ -59,16 +59,16 @@ def write_bookmarks(
 
 
 def make_bookmark(
-    pdf_file: pdfplumber.PDF, rank: int, paragraph: List[Word]
+    pdf_file: pdfplumber.PDF, rank: int, paragraph: List[List[Word]]
 ) -> Tuple[int, Bookmark]:
-    first_word = paragraph[0]
+    first_word = paragraph[0][0]
     page_number = first_word["page_number"]
-    text = " ".join([word["text"] for word in paragraph])
+    text = " ".join([word["text"] for line in paragraph for word in line])
     return (
         rank,
         dict(
             title=text,
-            page_number=page_number,
+            page_number=str(page_number),
             scroll_distance=(
                 pdf_file.pages[page_number - 1].height
                 - first_word["top"]
@@ -80,7 +80,7 @@ def make_bookmark(
 
 
 def generate_bookmarks(
-    pdf_file: pdfplumber.PDF, top_scored_paragraphs: List[Tuple[int, List[Word]]]
+    pdf_file: pdfplumber.PDF, top_scored_paragraphs: List[Tuple[int, List[List[Word]]]]
 ):
     bookmarks: List[Tuple[int, Bookmark]] = [
         make_bookmark(pdf_file, rank, paragraph)

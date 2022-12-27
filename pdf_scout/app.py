@@ -1,8 +1,8 @@
-from pdf_scout.extract import extract_all_words
+from pdf_scout.extract import extract_all_lines
 from pdf_scout.scoring import score_paragraphs
 from pdf_scout.bookmarks import generate_bookmarks, write_bookmarks
 from pdf_scout.custom_types import HeadingScore, Word
-from pdf_scout.paragraphs import group_words_in_paragraphs
+from pdf_scout.paragraphs import group_lines_in_paragraphs
 from time import time
 from typing import List, Tuple
 from operator import itemgetter
@@ -11,12 +11,13 @@ import typer
 
 
 def get_top_scored_paragraphs(
-    scored_paragraphs: List[Tuple[HeadingScore, List[Word]]], levels: int
-) -> List[Tuple[int, List[Word]]]:
+    scored_paragraphs: List[Tuple[HeadingScore, List[List[Word]]]],
+    levels: int
+) -> List[Tuple[int, List[List[Word]]]]:
     all_scores = list(set([score["overall"] for score, _ in scored_paragraphs]))
     all_scores.sort(reverse=True)
     top_scores: List[float] = all_scores[0:levels]
-    top_scored_paragraphs: List[Tuple[int, List[Word]]] = [
+    top_scored_paragraphs: List[Tuple[int, List[List[Word]]]] = [
         (top_scores.index(score["overall"]), paragraph)
         for score, paragraph in scored_paragraphs
         if score["overall"] in top_scores
@@ -28,7 +29,7 @@ def main(
     input_file_path: str,
     output_file_path: str = typer.Argument(""),
     levels: int = typer.Argument(3),
-):
+) -> None:
     start_time = time()
 
     if input_file_path is None or len(input_file_path) == 0:
@@ -40,11 +41,11 @@ def main(
         output_file_path = f"{input_path_start}-out.pdf"
 
     pdf_file = pdfplumber.open(input_file_path)
-    all_words, heading_words = itemgetter("all_words", "heading_words")(
-        extract_all_words(pdf_file)
+    all_lines, heading_lines = itemgetter("all_lines", "heading_lines")(
+        extract_all_lines(pdf_file)
     )
-    heading_paragraphs = group_words_in_paragraphs(heading_words)
-    scored_paragraphs = score_paragraphs(all_words, heading_paragraphs)
+    heading_paragraphs = group_lines_in_paragraphs(heading_lines)
+    scored_paragraphs = score_paragraphs(all_lines, heading_paragraphs)
     top_scored_paragraphs = get_top_scored_paragraphs(scored_paragraphs, levels)
 
     bookmarks = generate_bookmarks(pdf_file, top_scored_paragraphs)
@@ -56,7 +57,7 @@ def main(
     print(f"Finished in {end_time - start_time}s")
 
 
-def start():
+def start() -> None:
     typer.run(main)
 
 

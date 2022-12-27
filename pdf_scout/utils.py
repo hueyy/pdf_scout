@@ -1,5 +1,5 @@
 import pdfplumber
-from typing import List, Tuple
+from typing import List, Tuple, Sequence
 from pdf_scout.logger import debug_log
 from pdf_scout.custom_types import Word
 import statistics
@@ -25,7 +25,9 @@ def is_a4_page(page) -> bool:
     )
 
 
-def guess_left_margin_for_misc_document(counts: List[Tuple[float, int]]) -> List[float]:
+def guess_left_margin_for_misc_document(
+    counts: Sequence[Tuple[float, int]]
+) -> List[float]:
     std_dev = statistics.pstdev([count for _, count in counts])
     mean = statistics.mean([count for _, count in counts])
     threshold_counts = [
@@ -48,7 +50,9 @@ def guess_left_margin_for_misc_document(counts: List[Tuple[float, int]]) -> List
         )
 
 
-def guess_left_margin_for_a4_document(counts: List[Tuple[float, int]]) -> List[float]:
+def guess_left_margin_for_a4_document(
+    counts: Sequence[Tuple[float, int]]
+) -> List[float]:
     left_margins = [left_margin for left_margin, _ in counts]
     std_dev = statistics.pstdev([count for _, count in counts])
     mean = statistics.mean([count for _, count in counts])
@@ -62,8 +66,13 @@ def guess_left_margin_for_a4_document(counts: List[Tuple[float, int]]) -> List[f
     return guess_left_margin_for_misc_document(counts)
 
 
-def guess_left_margin(pdf_file: pdfplumber.PDF, words: List[Word]) -> List[float]:
-    words_x0 = [round(word["x0"]) for word in words]
+def guess_left_margin(pdf_file: pdfplumber.PDF, lines: List[List[Word]]) -> List[float]:
+    words_x0: List[int] = [
+        # assume line position is same for all words in line
+        # hence just use the first word
+        round(line[0]["x0"])
+        for line in lines
+    ]
     counts = [(x0, words_x0.count(x0)) for x0 in set(words_x0)]
 
     is_a4_document = len(

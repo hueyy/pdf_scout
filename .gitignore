@@ -9,4 +9,4 @@ __pycache__
 /dist
 /.mypy_cache
 
-/pdf_scout/test.py
+/test.py

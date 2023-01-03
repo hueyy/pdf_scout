@@ -1,9 +1,9 @@
 [tool.poetry]
 name = "pdf_scout"
-version = "0.0.5"
+version = "0.0.6"
 description = "automatically create bookmarks in a PDF file"
 authors = ["Huey <hello@huey.xyz>"]
-license = "GPL-v3"
+license = "EUPL-1.2"
 readme = "README.md"
 homepage = "https://github.com/hueyy/pdf_scout"
 repository = "https://github.com/hueyy/pdf_scout"
@@ -27,9 +27,6 @@ mypy = "^0.982"
 
 [tool.poetry.scripts]
 pdf_scout = "pdf_scout.app:start"
-
-[tool.poetry.group.dev.dependencies]
-pytest-xdist = "^3.1.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

@@ -3,6 +3,10 @@ from typing import List, Tuple, Sequence
 from pdf_scout.logger import debug_log
 from pdf_scout.custom_types import Word
 import statistics
+from functools import wraps
+from time import time
+import pprint
+import re
 
 
 A4 = {"width": 21, "height": 29.7}
@@ -86,3 +90,24 @@ def guess_left_margin(pdf_file: pdfplumber.PDF, lines: List[List[Word]]) -> List
 
 def dict_list_unique_by(dict_list, func):
     return list({func(item): item for item in dict_list}.values())
+
+
+def print_runtime(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start_time = time()
+        result = func(*args, **kwargs)
+        end_time = time()
+        print(f"Function {func.__name__} finished in {end_time - start_time}s")
+        return result
+
+    return wrapper
+
+
+def pretty_print(value):
+    pp = pprint.PrettyPrinter(indent=2)
+    pp.pprint(value)
+
+
+def contains_alphanumeric(string):
+    return len(re.sub(r"\W+", "", string)) > 0

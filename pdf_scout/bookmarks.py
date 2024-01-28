@@ -80,8 +80,9 @@ def make_bookmark(
 
 
 def generate_bookmarks(
-    pdf_file: pdfplumber.PDF, top_scored_paragraphs: List[Tuple[int, List[List[Word]]]]
-):
+    pdf_file: pdfplumber.PDF,
+    top_scored_paragraphs: List[Tuple[int, List[List[Word]]]]
+) -> List[Tuple[int, Bookmark]]:
     bookmarks: List[Tuple[int, Bookmark]] = [
         make_bookmark(pdf_file, rank, paragraph)
         for rank, paragraph in top_scored_paragraphs

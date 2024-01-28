@@ -2,7 +2,11 @@ from itertools import groupby
 from typing import List, Tuple, Iterator
 from pdf_scout.logger import debug_log
 from pdf_scout.custom_types import RawWord, Word, DocumentLines, Rect
-from pdf_scout.utils import guess_left_margin, dict_list_unique_by
+from pdf_scout.utils import (
+    guess_left_margin,
+    dict_list_unique_by,
+    contains_alphanumeric,
+)
 import statistics
 import pdfplumber
 import math
@@ -249,11 +253,16 @@ def words_to_lines(raw_words: List[RawWord]) -> List[List[RawWord]]:
         else:
             return acc + [[cur]]
 
-    return reduce(to_list, raw_words, [])
+    lines = reduce(to_list, raw_words, [])
+    # only return lines with alphanumeric characters
+    return [
+        line
+        for line in lines
+        if all([contains_alphanumeric(word["text"]) for word in line])
+    ]
 
 
 def extract_all_lines(pdf_file: pdfplumber.PDF) -> DocumentLines:
-
     header_bottom_position = get_header_bottom_position(pdf_file)
 
     raw_words = raw_extract_words(pdf_file, header_bottom_position)

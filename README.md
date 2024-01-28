@@ -28,11 +28,11 @@ This project is a work in progress and will likely only generate suitable bookma
 
 ## Supported document types
 
-`pdf_scout` has been tested on and expressly supports the following classes of documents:
+`pdf_scout` expressly seeks to supports the following classes of documents:
 
 - Singapore State Court and Supreme Court Judgments (unreported)
 - Singapore Law Reports
-- [OpenDoc](https://www.opendoc.gov.sg/)-generated PDFs, such as the [State Court Practice Directions 2021](https://epd-statecourts-2021.opendoc.gov.sg/) and the [Supreme Court Practice Directions 2021](https://epd-supcourt-2021.opendoc.gov.sg/)
+- ~~[OpenDoc](https://www.opendoc.gov.sg/)-generated PDFs, such as the [State Court Practice Directions 2021](https://epd-statecourts-2021.opendoc.gov.sg/) and the [Supreme Court Practice Directions 2021](https://epd-supcourt-2021.opendoc.gov.sg/)~~ – OpenDoc has been deprecated by GovTech
 
 It may support other types of documents as well. If a particular class of document isn't supported or does not work well, please open an issue and I will consider adding support for it.
 
@@ -54,6 +54,12 @@ To run a script directly, run:
 
 ```bash
 poetry run python ./pdf_scout/app.py <INPUT_FILE_PATH>
+```
+
+Debugging using VSCode:
+
+```bash
+python -m debugpy --listen 0.0.0.0:5678 --wait-for-client ./pdf_scout/app.py
 ```
 
 ### Tests
